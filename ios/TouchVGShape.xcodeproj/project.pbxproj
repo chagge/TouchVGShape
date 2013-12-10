@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE490E58185715D9004F70CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE490E57185715D9004F70CC /* Foundation.framework */; };
+		AE490ECF1857178E004F70CC /* gicanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6818571683004F70CC /* gicanvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED0185717C5004F70CC /* mgbase.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6A18571683004F70CC /* mgbase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED1185717C5004F70CC /* mgbnd.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6B18571683004F70CC /* mgbnd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED2185717C5004F70CC /* mgbox.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6C18571683004F70CC /* mgbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED3185717C5004F70CC /* mgcurv.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6D18571683004F70CC /* mgcurv.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED4185717C5004F70CC /* mgdef.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6E18571683004F70CC /* mgdef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED5185717C5004F70CC /* mglnrel.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6F18571683004F70CC /* mglnrel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED6185717C5004F70CC /* mgmat.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7018571683004F70CC /* mgmat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED7185717C5004F70CC /* mgnear.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7118571683004F70CC /* mgnear.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED8185717C5004F70CC /* mgpnt.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7218571683004F70CC /* mgpnt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490ED9185717C5004F70CC /* mgtol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7318571683004F70CC /* mgtol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EDA185717C5004F70CC /* mgvec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7418571683004F70CC /* mgvec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EDB185717CC004F70CC /* gicolor.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7618571683004F70CC /* gicolor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EDC185717CC004F70CC /* gicontxt.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7718571683004F70CC /* gicontxt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EDD185717CC004F70CC /* gigraph.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7818571683004F70CC /* gigraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EDE185717CC004F70CC /* gilock.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7918571683004F70CC /* gilock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EDF185717CC004F70CC /* gipath.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7A18571683004F70CC /* gipath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE0185717CC004F70CC /* gixform.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7B18571683004F70CC /* gixform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE1185717D0004F70CC /* mgjsonstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7D18571683004F70CC /* mgjsonstorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE2185717D5004F70CC /* mglog.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E7E18571683004F70CC /* mglog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE3185717DE004F70CC /* mgbasicsp.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8018571683004F70CC /* mgbasicsp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE4185717DE004F70CC /* mgcomposite.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8118571683004F70CC /* mgcomposite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE5185717DE004F70CC /* mggrid.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8218571683004F70CC /* mggrid.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE6185717DE004F70CC /* mgobject.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8318571683004F70CC /* mgobject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE7185717DE004F70CC /* mgshape.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8418571683004F70CC /* mgshape.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE8185717DE004F70CC /* mgshape_.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8518571683004F70CC /* mgshape_.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EE9185717DE004F70CC /* mgshapes.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8618571683004F70CC /* mgshapes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EEA185717DE004F70CC /* mgshapet.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8718571683004F70CC /* mgshapet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EEB185717DE004F70CC /* mgshapetype.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8818571683004F70CC /* mgshapetype.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EEC185717DE004F70CC /* mgspfactory.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8918571683004F70CC /* mgspfactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EED185717ED004F70CC /* mgstorage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8B18571683004F70CC /* mgstorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EEE185717FA004F70CC /* testcanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E8D18571683004F70CC /* testcanvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490EEF18571809004F70CC /* mgbase.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9718571683004F70CC /* mgbase.cpp */; };
+		AE490EF018571809004F70CC /* mgbnd.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9818571683004F70CC /* mgbnd.cpp */; };
+		AE490EF118571809004F70CC /* mgbox.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9918571683004F70CC /* mgbox.cpp */; };
+		AE490EF218571809004F70CC /* mgcurv.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9A18571683004F70CC /* mgcurv.cpp */; };
+		AE490EF318571809004F70CC /* mgdblpt.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9B18571683004F70CC /* mgdblpt.h */; };
+		AE490EF418571809004F70CC /* mglnrel.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9C18571683004F70CC /* mglnrel.cpp */; };
+		AE490EF518571809004F70CC /* mgmat.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9D18571683004F70CC /* mgmat.cpp */; };
+		AE490EF618571809004F70CC /* mgnear.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9E18571683004F70CC /* mgnear.cpp */; };
+		AE490EF718571809004F70CC /* mgnearbz.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490E9F18571683004F70CC /* mgnearbz.cpp */; };
+		AE490EF818571809004F70CC /* mgvec.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA018571683004F70CC /* mgvec.cpp */; };
+		AE490EF918571813004F70CC /* gigraph.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA218571683004F70CC /* gigraph.cpp */; };
+		AE490EFA18571813004F70CC /* gigraph_.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA318571683004F70CC /* gigraph_.h */; };
+		AE490EFB18571813004F70CC /* gipath.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA418571683004F70CC /* gipath.cpp */; };
+		AE490EFC18571813004F70CC /* giplclip.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA518571683004F70CC /* giplclip.h */; };
+		AE490EFD18571813004F70CC /* gixform.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA618571683004F70CC /* gixform.cpp */; };
+		AE490EFE1857181A004F70CC /* mgjsonstorage.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EAE18571683004F70CC /* mgjsonstorage.cpp */; };
+		AE490EFF18571827004F70CC /* document.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB218571683004F70CC /* document.h */; };
+		AE490F0018571827004F70CC /* filestream.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB318571683004F70CC /* filestream.h */; };
+		AE490F011857182F004F70CC /* pow10.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB518571683004F70CC /* pow10.h */; };
+		AE490F021857182F004F70CC /* stack.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB618571683004F70CC /* stack.h */; };
+		AE490F031857182F004F70CC /* strfunc.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB718571683004F70CC /* strfunc.h */; };
+		AE490F0418571835004F70CC /* prettywriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB818571683004F70CC /* prettywriter.h */; };
+		AE490F0518571835004F70CC /* rapidjson.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB918571683004F70CC /* rapidjson.h */; };
+		AE490F0618571835004F70CC /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EBA18571683004F70CC /* reader.h */; };
+		AE490F0718571835004F70CC /* stringbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EBD18571683004F70CC /* stringbuffer.h */; };
+		AE490F0818571835004F70CC /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EBE18571683004F70CC /* writer.h */; };
+		AE490F091857183C004F70CC /* mgcomposite.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC218571683004F70CC /* mgcomposite.cpp */; };
+		AE490F0A1857183C004F70CC /* mgellipse.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC318571683004F70CC /* mgellipse.cpp */; };
+		AE490F0B1857183C004F70CC /* mggrid.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC418571683004F70CC /* mggrid.cpp */; };
+		AE490F0C1857183C004F70CC /* mgline.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC518571683004F70CC /* mgline.cpp */; };
+		AE490F0D1857183C004F70CC /* mglines.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC618571683004F70CC /* mglines.cpp */; };
+		AE490F0E1857183C004F70CC /* mgrdrect.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC718571683004F70CC /* mgrdrect.cpp */; };
+		AE490F0F1857183C004F70CC /* mgrect.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC818571683004F70CC /* mgrect.cpp */; };
+		AE490F101857183C004F70CC /* mgshape.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC918571683004F70CC /* mgshape.cpp */; };
+		AE490F111857183C004F70CC /* mgshapes.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490ECA18571683004F70CC /* mgshapes.cpp */; };
+		AE490F121857183C004F70CC /* mgsplines.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490ECB18571683004F70CC /* mgsplines.cpp */; };
+		AE490F1318571843004F70CC /* testcanvas.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490ECE18571683004F70CC /* testcanvas.cpp */; };
+		AE490F15185718FA004F70CC /* RandomShape.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490F14185718FA004F70CC /* RandomShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE490F1718571917004F70CC /* RandomShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490F1618571917004F70CC /* RandomShape.cpp */; };
+		AE490F1818571929004F70CC /* RandomShape.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490F1618571917004F70CC /* RandomShape.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE490E54185715D9004F70CC /* libTouchVGShape.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTouchVGShape.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE490E57185715D9004F70CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE490E5B185715D9004F70CC /* TouchVGShape-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchVGShape-Prefix.pch"; sourceTree = "<group>"; };
+		AE490E6818571683004F70CC /* gicanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gicanvas.h; sourceTree = "<group>"; };
+		AE490E6A18571683004F70CC /* mgbase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgbase.h; sourceTree = "<group>"; };
+		AE490E6B18571683004F70CC /* mgbnd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgbnd.h; sourceTree = "<group>"; };
+		AE490E6C18571683004F70CC /* mgbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgbox.h; sourceTree = "<group>"; };
+		AE490E6D18571683004F70CC /* mgcurv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgcurv.h; sourceTree = "<group>"; };
+		AE490E6E18571683004F70CC /* mgdef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgdef.h; sourceTree = "<group>"; };
+		AE490E6F18571683004F70CC /* mglnrel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mglnrel.h; sourceTree = "<group>"; };
+		AE490E7018571683004F70CC /* mgmat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgmat.h; sourceTree = "<group>"; };
+		AE490E7118571683004F70CC /* mgnear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgnear.h; sourceTree = "<group>"; };
+		AE490E7218571683004F70CC /* mgpnt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgpnt.h; sourceTree = "<group>"; };
+		AE490E7318571683004F70CC /* mgtol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgtol.h; sourceTree = "<group>"; };
+		AE490E7418571683004F70CC /* mgvec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgvec.h; sourceTree = "<group>"; };
+		AE490E7618571683004F70CC /* gicolor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gicolor.h; sourceTree = "<group>"; };
+		AE490E7718571683004F70CC /* gicontxt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gicontxt.h; sourceTree = "<group>"; };
+		AE490E7818571683004F70CC /* gigraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gigraph.h; sourceTree = "<group>"; };
+		AE490E7918571683004F70CC /* gilock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gilock.h; sourceTree = "<group>"; };
+		AE490E7A18571683004F70CC /* gipath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gipath.h; sourceTree = "<group>"; };
+		AE490E7B18571683004F70CC /* gixform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gixform.h; sourceTree = "<group>"; };
+		AE490E7D18571683004F70CC /* mgjsonstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgjsonstorage.h; sourceTree = "<group>"; };
+		AE490E7E18571683004F70CC /* mglog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mglog.h; sourceTree = "<group>"; };
+		AE490E8018571683004F70CC /* mgbasicsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgbasicsp.h; sourceTree = "<group>"; };
+		AE490E8118571683004F70CC /* mgcomposite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgcomposite.h; sourceTree = "<group>"; };
+		AE490E8218571683004F70CC /* mggrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mggrid.h; sourceTree = "<group>"; };
+		AE490E8318571683004F70CC /* mgobject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgobject.h; sourceTree = "<group>"; };
+		AE490E8418571683004F70CC /* mgshape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgshape.h; sourceTree = "<group>"; };
+		AE490E8518571683004F70CC /* mgshape_.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgshape_.h; sourceTree = "<group>"; };
+		AE490E8618571683004F70CC /* mgshapes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgshapes.h; sourceTree = "<group>"; };
+		AE490E8718571683004F70CC /* mgshapet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgshapet.h; sourceTree = "<group>"; };
+		AE490E8818571683004F70CC /* mgshapetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgshapetype.h; sourceTree = "<group>"; };
+		AE490E8918571683004F70CC /* mgspfactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgspfactory.h; sourceTree = "<group>"; };
+		AE490E8B18571683004F70CC /* mgstorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgstorage.h; sourceTree = "<group>"; };
+		AE490E8D18571683004F70CC /* testcanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testcanvas.h; sourceTree = "<group>"; };
+		AE490E9718571683004F70CC /* mgbase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgbase.cpp; sourceTree = "<group>"; };
+		AE490E9818571683004F70CC /* mgbnd.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgbnd.cpp; sourceTree = "<group>"; };
+		AE490E9918571683004F70CC /* mgbox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgbox.cpp; sourceTree = "<group>"; };
+		AE490E9A18571683004F70CC /* mgcurv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgcurv.cpp; sourceTree = "<group>"; };
+		AE490E9B18571683004F70CC /* mgdblpt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgdblpt.h; sourceTree = "<group>"; };
+		AE490E9C18571683004F70CC /* mglnrel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mglnrel.cpp; sourceTree = "<group>"; };
+		AE490E9D18571683004F70CC /* mgmat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgmat.cpp; sourceTree = "<group>"; };
+		AE490E9E18571683004F70CC /* mgnear.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgnear.cpp; sourceTree = "<group>"; };
+		AE490E9F18571683004F70CC /* mgnearbz.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgnearbz.cpp; sourceTree = "<group>"; };
+		AE490EA018571683004F70CC /* mgvec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgvec.cpp; sourceTree = "<group>"; };
+		AE490EA218571683004F70CC /* gigraph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gigraph.cpp; sourceTree = "<group>"; };
+		AE490EA318571683004F70CC /* gigraph_.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gigraph_.h; sourceTree = "<group>"; };
+		AE490EA418571683004F70CC /* gipath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gipath.cpp; sourceTree = "<group>"; };
+		AE490EA518571683004F70CC /* giplclip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = giplclip.h; sourceTree = "<group>"; };
+		AE490EA618571683004F70CC /* gixform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gixform.cpp; sourceTree = "<group>"; };
+		AE490EAE18571683004F70CC /* mgjsonstorage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgjsonstorage.cpp; sourceTree = "<group>"; };
+		AE490EB218571683004F70CC /* document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
+		AE490EB318571683004F70CC /* filestream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filestream.h; sourceTree = "<group>"; };
+		AE490EB518571683004F70CC /* pow10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pow10.h; sourceTree = "<group>"; };
+		AE490EB618571683004F70CC /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		AE490EB718571683004F70CC /* strfunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strfunc.h; sourceTree = "<group>"; };
+		AE490EB818571683004F70CC /* prettywriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prettywriter.h; sourceTree = "<group>"; };
+		AE490EB918571683004F70CC /* rapidjson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rapidjson.h; sourceTree = "<group>"; };
+		AE490EBA18571683004F70CC /* reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		AE490EBD18571683004F70CC /* stringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringbuffer.h; sourceTree = "<group>"; };
+		AE490EBE18571683004F70CC /* writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		AE490EC218571683004F70CC /* mgcomposite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgcomposite.cpp; sourceTree = "<group>"; };
+		AE490EC318571683004F70CC /* mgellipse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgellipse.cpp; sourceTree = "<group>"; };
+		AE490EC418571683004F70CC /* mggrid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mggrid.cpp; sourceTree = "<group>"; };
+		AE490EC518571683004F70CC /* mgline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgline.cpp; sourceTree = "<group>"; };
+		AE490EC618571683004F70CC /* mglines.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mglines.cpp; sourceTree = "<group>"; };
+		AE490EC718571683004F70CC /* mgrdrect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgrdrect.cpp; sourceTree = "<group>"; };
+		AE490EC818571683004F70CC /* mgrect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgrect.cpp; sourceTree = "<group>"; };
+		AE490EC918571683004F70CC /* mgshape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgshape.cpp; sourceTree = "<group>"; };
+		AE490ECA18571683004F70CC /* mgshapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgshapes.cpp; sourceTree = "<group>"; };
+		AE490ECB18571683004F70CC /* mgsplines.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgsplines.cpp; sourceTree = "<group>"; };
+		AE490ECE18571683004F70CC /* testcanvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testcanvas.cpp; sourceTree = "<group>"; };
+		AE490F14185718FA004F70CC /* RandomShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomShape.h; sourceTree = "<group>"; };
+		AE490F1618571917004F70CC /* RandomShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomShape.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE490E50185715D9004F70CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE490E58185715D9004F70CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE490E49185715D9004F70CC = {
+			isa = PBXGroup;
+			children = (
+				AE490E59185715D9004F70CC /* TouchVGShape */,
+				AE490E56185715D9004F70CC /* Frameworks */,
+				AE490E55185715D9004F70CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE490E55185715D9004F70CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E54185715D9004F70CC /* libTouchVGShape.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE490E56185715D9004F70CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E57185715D9004F70CC /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE490E59185715D9004F70CC /* TouchVGShape */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E6418571683004F70CC /* core */,
+				AE490E5A185715D9004F70CC /* Supporting Files */,
+			);
+			path = TouchVGShape;
+			sourceTree = "<group>";
+		};
+		AE490E5A185715D9004F70CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E5B185715D9004F70CC /* TouchVGShape-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE490E6418571683004F70CC /* core */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E6618571683004F70CC /* inc */,
+				AE490E9218571683004F70CC /* src */,
+			);
+			name = core;
+			path = ../../core;
+			sourceTree = "<group>";
+		};
+		AE490E6618571683004F70CC /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E6718571683004F70CC /* canvas */,
+				AE490E6918571683004F70CC /* geom */,
+				AE490E7518571683004F70CC /* graph */,
+				AE490E7C18571683004F70CC /* jsonstorage */,
+				AE490E7E18571683004F70CC /* mglog.h */,
+				AE490E7F18571683004F70CC /* shape */,
+				AE490E8A18571683004F70CC /* storage */,
+				AE490E8C18571683004F70CC /* test */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		AE490E6718571683004F70CC /* canvas */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E6818571683004F70CC /* gicanvas.h */,
+			);
+			path = canvas;
+			sourceTree = "<group>";
+		};
+		AE490E6918571683004F70CC /* geom */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E6A18571683004F70CC /* mgbase.h */,
+				AE490E6B18571683004F70CC /* mgbnd.h */,
+				AE490E6C18571683004F70CC /* mgbox.h */,
+				AE490E6D18571683004F70CC /* mgcurv.h */,
+				AE490E6E18571683004F70CC /* mgdef.h */,
+				AE490E6F18571683004F70CC /* mglnrel.h */,
+				AE490E7018571683004F70CC /* mgmat.h */,
+				AE490E7118571683004F70CC /* mgnear.h */,
+				AE490E7218571683004F70CC /* mgpnt.h */,
+				AE490E7318571683004F70CC /* mgtol.h */,
+				AE490E7418571683004F70CC /* mgvec.h */,
+			);
+			path = geom;
+			sourceTree = "<group>";
+		};
+		AE490E7518571683004F70CC /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E7618571683004F70CC /* gicolor.h */,
+				AE490E7718571683004F70CC /* gicontxt.h */,
+				AE490E7818571683004F70CC /* gigraph.h */,
+				AE490E7918571683004F70CC /* gilock.h */,
+				AE490E7A18571683004F70CC /* gipath.h */,
+				AE490E7B18571683004F70CC /* gixform.h */,
+			);
+			path = graph;
+			sourceTree = "<group>";
+		};
+		AE490E7C18571683004F70CC /* jsonstorage */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E7D18571683004F70CC /* mgjsonstorage.h */,
+			);
+			path = jsonstorage;
+			sourceTree = "<group>";
+		};
+		AE490E7F18571683004F70CC /* shape */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E8018571683004F70CC /* mgbasicsp.h */,
+				AE490E8118571683004F70CC /* mgcomposite.h */,
+				AE490E8218571683004F70CC /* mggrid.h */,
+				AE490E8318571683004F70CC /* mgobject.h */,
+				AE490E8418571683004F70CC /* mgshape.h */,
+				AE490E8518571683004F70CC /* mgshape_.h */,
+				AE490E8618571683004F70CC /* mgshapes.h */,
+				AE490E8718571683004F70CC /* mgshapet.h */,
+				AE490E8818571683004F70CC /* mgshapetype.h */,
+				AE490E8918571683004F70CC /* mgspfactory.h */,
+			);
+			path = shape;
+			sourceTree = "<group>";
+		};
+		AE490E8A18571683004F70CC /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E8B18571683004F70CC /* mgstorage.h */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
+		AE490E8C18571683004F70CC /* test */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E8D18571683004F70CC /* testcanvas.h */,
+				AE490F14185718FA004F70CC /* RandomShape.h */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		AE490E9218571683004F70CC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E9318571683004F70CC /* geom */,
+				AE490EA118571683004F70CC /* graph */,
+				AE490EAA18571683004F70CC /* jsonstorage */,
+				AE490EB018571683004F70CC /* rapidjson */,
+				AE490EBF18571683004F70CC /* shape */,
+				AE490ECD18571683004F70CC /* test */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		AE490E9318571683004F70CC /* geom */ = {
+			isa = PBXGroup;
+			children = (
+				AE490E9718571683004F70CC /* mgbase.cpp */,
+				AE490E9818571683004F70CC /* mgbnd.cpp */,
+				AE490E9918571683004F70CC /* mgbox.cpp */,
+				AE490E9A18571683004F70CC /* mgcurv.cpp */,
+				AE490E9B18571683004F70CC /* mgdblpt.h */,
+				AE490E9C18571683004F70CC /* mglnrel.cpp */,
+				AE490E9D18571683004F70CC /* mgmat.cpp */,
+				AE490E9E18571683004F70CC /* mgnear.cpp */,
+				AE490E9F18571683004F70CC /* mgnearbz.cpp */,
+				AE490EA018571683004F70CC /* mgvec.cpp */,
+			);
+			path = geom;
+			sourceTree = "<group>";
+		};
+		AE490EA118571683004F70CC /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				AE490EA218571683004F70CC /* gigraph.cpp */,
+				AE490EA318571683004F70CC /* gigraph_.h */,
+				AE490EA418571683004F70CC /* gipath.cpp */,
+				AE490EA518571683004F70CC /* giplclip.h */,
+				AE490EA618571683004F70CC /* gixform.cpp */,
+			);
+			path = graph;
+			sourceTree = "<group>";
+		};
+		AE490EAA18571683004F70CC /* jsonstorage */ = {
+			isa = PBXGroup;
+			children = (
+				AE490EAE18571683004F70CC /* mgjsonstorage.cpp */,
+			);
+			path = jsonstorage;
+			sourceTree = "<group>";
+		};
+		AE490EB018571683004F70CC /* rapidjson */ = {
+			isa = PBXGroup;
+			children = (
+				AE490EB218571683004F70CC /* document.h */,
+				AE490EB318571683004F70CC /* filestream.h */,
+				AE490EB418571683004F70CC /* internal */,
+				AE490EB818571683004F70CC /* prettywriter.h */,
+				AE490EB918571683004F70CC /* rapidjson.h */,
+				AE490EBA18571683004F70CC /* reader.h */,
+				AE490EBD18571683004F70CC /* stringbuffer.h */,
+				AE490EBE18571683004F70CC /* writer.h */,
+			);
+			path = rapidjson;
+			sourceTree = "<group>";
+		};
+		AE490EB418571683004F70CC /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				AE490EB518571683004F70CC /* pow10.h */,
+				AE490EB618571683004F70CC /* stack.h */,
+				AE490EB718571683004F70CC /* strfunc.h */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		AE490EBF18571683004F70CC /* shape */ = {
+			isa = PBXGroup;
+			children = (
+				AE490EC218571683004F70CC /* mgcomposite.cpp */,
+				AE490EC318571683004F70CC /* mgellipse.cpp */,
+				AE490EC418571683004F70CC /* mggrid.cpp */,
+				AE490EC518571683004F70CC /* mgline.cpp */,
+				AE490EC618571683004F70CC /* mglines.cpp */,
+				AE490EC718571683004F70CC /* mgrdrect.cpp */,
+				AE490EC818571683004F70CC /* mgrect.cpp */,
+				AE490EC918571683004F70CC /* mgshape.cpp */,
+				AE490ECA18571683004F70CC /* mgshapes.cpp */,
+				AE490ECB18571683004F70CC /* mgsplines.cpp */,
+			);
+			path = shape;
+			sourceTree = "<group>";
+		};
+		AE490ECD18571683004F70CC /* test */ = {
+			isa = PBXGroup;
+			children = (
+				AE490ECE18571683004F70CC /* testcanvas.cpp */,
+				AE490F1618571917004F70CC /* RandomShape.cpp */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE490E51185715D9004F70CC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE490F15185718FA004F70CC /* RandomShape.h in Headers */,
+				AE490ECF1857178E004F70CC /* gicanvas.h in Headers */,
+				AE490ED0185717C5004F70CC /* mgbase.h in Headers */,
+				AE490ED1185717C5004F70CC /* mgbnd.h in Headers */,
+				AE490ED2185717C5004F70CC /* mgbox.h in Headers */,
+				AE490ED3185717C5004F70CC /* mgcurv.h in Headers */,
+				AE490ED4185717C5004F70CC /* mgdef.h in Headers */,
+				AE490ED5185717C5004F70CC /* mglnrel.h in Headers */,
+				AE490ED6185717C5004F70CC /* mgmat.h in Headers */,
+				AE490ED7185717C5004F70CC /* mgnear.h in Headers */,
+				AE490ED8185717C5004F70CC /* mgpnt.h in Headers */,
+				AE490ED9185717C5004F70CC /* mgtol.h in Headers */,
+				AE490EDA185717C5004F70CC /* mgvec.h in Headers */,
+				AE490EDB185717CC004F70CC /* gicolor.h in Headers */,
+				AE490EDC185717CC004F70CC /* gicontxt.h in Headers */,
+				AE490EDD185717CC004F70CC /* gigraph.h in Headers */,
+				AE490EDE185717CC004F70CC /* gilock.h in Headers */,
+				AE490EDF185717CC004F70CC /* gipath.h in Headers */,
+				AE490EE0185717CC004F70CC /* gixform.h in Headers */,
+				AE490EE1185717D0004F70CC /* mgjsonstorage.h in Headers */,
+				AE490EED185717ED004F70CC /* mgstorage.h in Headers */,
+				AE490EE2185717D5004F70CC /* mglog.h in Headers */,
+				AE490EE3185717DE004F70CC /* mgbasicsp.h in Headers */,
+				AE490EE4185717DE004F70CC /* mgcomposite.h in Headers */,
+				AE490EE5185717DE004F70CC /* mggrid.h in Headers */,
+				AE490EE6185717DE004F70CC /* mgobject.h in Headers */,
+				AE490EE7185717DE004F70CC /* mgshape.h in Headers */,
+				AE490EE8185717DE004F70CC /* mgshape_.h in Headers */,
+				AE490EE9185717DE004F70CC /* mgshapes.h in Headers */,
+				AE490EEA185717DE004F70CC /* mgshapet.h in Headers */,
+				AE490EEB185717DE004F70CC /* mgshapetype.h in Headers */,
+				AE490EEC185717DE004F70CC /* mgspfactory.h in Headers */,
+				AE490EEE185717FA004F70CC /* testcanvas.h in Headers */,
+				AE490EEF18571809004F70CC /* mgbase.cpp in Headers */,
+				AE490EF018571809004F70CC /* mgbnd.cpp in Headers */,
+				AE490EF118571809004F70CC /* mgbox.cpp in Headers */,
+				AE490EF218571809004F70CC /* mgcurv.cpp in Headers */,
+				AE490EF318571809004F70CC /* mgdblpt.h in Headers */,
+				AE490EF418571809004F70CC /* mglnrel.cpp in Headers */,
+				AE490EF518571809004F70CC /* mgmat.cpp in Headers */,
+				AE490EF618571809004F70CC /* mgnear.cpp in Headers */,
+				AE490EF718571809004F70CC /* mgnearbz.cpp in Headers */,
+				AE490EF818571809004F70CC /* mgvec.cpp in Headers */,
+				AE490EF918571813004F70CC /* gigraph.cpp in Headers */,
+				AE490EFA18571813004F70CC /* gigraph_.h in Headers */,
+				AE490EFB18571813004F70CC /* gipath.cpp in Headers */,
+				AE490EFC18571813004F70CC /* giplclip.h in Headers */,
+				AE490EFD18571813004F70CC /* gixform.cpp in Headers */,
+				AE490EFE1857181A004F70CC /* mgjsonstorage.cpp in Headers */,
+				AE490EFF18571827004F70CC /* document.h in Headers */,
+				AE490F0018571827004F70CC /* filestream.h in Headers */,
+				AE490F011857182F004F70CC /* pow10.h in Headers */,
+				AE490F021857182F004F70CC /* stack.h in Headers */,
+				AE490F031857182F004F70CC /* strfunc.h in Headers */,
+				AE490F0418571835004F70CC /* prettywriter.h in Headers */,
+				AE490F0518571835004F70CC /* rapidjson.h in Headers */,
+				AE490F0618571835004F70CC /* reader.h in Headers */,
+				AE490F0718571835004F70CC /* stringbuffer.h in Headers */,
+				AE490F0818571835004F70CC /* writer.h in Headers */,
+				AE490F091857183C004F70CC /* mgcomposite.cpp in Headers */,
+				AE490F0A1857183C004F70CC /* mgellipse.cpp in Headers */,
+				AE490F0B1857183C004F70CC /* mggrid.cpp in Headers */,
+				AE490F0C1857183C004F70CC /* mgline.cpp in Headers */,
+				AE490F0D1857183C004F70CC /* mglines.cpp in Headers */,
+				AE490F0E1857183C004F70CC /* mgrdrect.cpp in Headers */,
+				AE490F0F1857183C004F70CC /* mgrect.cpp in Headers */,
+				AE490F101857183C004F70CC /* mgshape.cpp in Headers */,
+				AE490F111857183C004F70CC /* mgshapes.cpp in Headers */,
+				AE490F121857183C004F70CC /* mgsplines.cpp in Headers */,
+				AE490F1318571843004F70CC /* testcanvas.cpp in Headers */,
+				AE490F1818571929004F70CC /* RandomShape.cpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AE490E53185715D9004F70CC /* TouchVGShape */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE490E61185715D9004F70CC /* Build configuration list for PBXNativeTarget "TouchVGShape" */;
+			buildPhases = (
+				AE490E4E185715D9004F70CC /* ShellScript */,
+				AE490E4F185715D9004F70CC /* Sources */,
+				AE490E50185715D9004F70CC /* Frameworks */,
+				AE490E51185715D9004F70CC /* Headers */,
+				AE490E52185715D9004F70CC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TouchVGShape;
+			productName = TouchVGShape;
+			productReference = AE490E54185715D9004F70CC /* libTouchVGShape.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE490E4A185715D9004F70CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = rhcad;
+			};
+			buildConfigurationList = AE490E4D185715D9004F70CC /* Build configuration list for PBXProject "TouchVGShape" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE490E49185715D9004F70CC;
+			productRefGroup = AE490E55185715D9004F70CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE490E53185715D9004F70CC /* TouchVGShape */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE490E4E185715D9004F70CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nif [ \"$CALLED_FROM_MASTER\" ]\nthen\n# This is the other build, called from the original instance\nexit 0\nfi\n\n# Clean up prior to build\n\nCURRENTCONFIG_DEVICE_DIR=\"${SYMROOT}/${CONFIGURATION}-iphoneos\"\nCURRENTCONFIG_SIMULATOR_DIR=\"${SYMROOT}/${CONFIGURATION}-iphonesimulator\"\nCURRENTCONFIG_UNIVERSAL_DIR=\"${SYMROOT}/${CONFIGURATION}-universal\"\n\nif [ ! -f \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" ]; then\n  echo \"Device build cleaned; cleaning other builds too\"\n  rm -f \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\" \n  rm -f \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nelif [ ! -f \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\" ]; then\n  echo \"Simulator build cleaned; cleaning other builds too\"\n  rm -f \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\"\n  rm -f \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nfi\n";
+		};
+		AE490E52185715D9004F70CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\n#\n# Universal static library script\n# http://github.com/michaeltyson/iOS-Universal-Library-Template\n#\n# Version 2.5\n#\n# Purpose:\n#   Create a static library for iPhone from within XCode\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Tweaked and made into an Xcode template by Michael Tyson - http://atastypixel.com/blog\n# Based on original script from Eonil\n# More info: see this Stack Overflow question: http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n# Additional changes by John Lawson <http://jelawson.com> to copy the CURRENTCONFIG_DEVICE_DIR to the CURRENTCONFIG_UNIVERSAL_DIR instead of creating it\n# to include other files that might have been copied via Copy Files build phases (e.g. readme files, xibs, etc); this removes the need to copy just\n# the header folder.\n#\n#################[ Tests: helps workaround any future bugs in Xcode ]########\n#\nDEBUG_THIS_SCRIPT=\"true\"\n\nif [ $DEBUG_THIS_SCRIPT = \"true\" ]\nthen\necho \"########### TESTS #############\"\necho \"Use the following variables when debugging this script; note that they may change on recursions\"\necho \"BUILD_DIR = $BUILD_DIR\"\necho \"BUILD_ROOT = $BUILD_ROOT\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR\"\necho \"CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR\"\necho \"TARGET_BUILD_DIR = $TARGET_BUILD_DIR\"\nfi\n\nif [ \"$CALLED_FROM_MASTER\" ]\nthen\n# This is the other build, called from the original instance\nexit 0\nfi\n\n# Find the BASESDK version number\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n\n# Build the other architecture\necho \"xcodebuild -project \\\"${PROJECT_FILE_PATH}\\\" -configuration \\\"${CONFIGURATION}\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUILD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\\\"${BUILD_DIR}\\\" BUILD_ROOT=\\\"${BUILD_ROOT}\\\" CALLED_FROM_MASTER=1\"\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -configuration \"${CONFIGURATION}\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" CALLED_FROM_MASTER=1\n\n# Merge built architectures\nCURRENTCONFIG_DEVICE_DIR=\"${SYMROOT}/${CONFIGURATION}-iphoneos\"\nCURRENTCONFIG_SIMULATOR_DIR=\"${SYMROOT}/${CONFIGURATION}-iphonesimulator\"\nCURRENTCONFIG_UNIVERSAL_DIR=\"${SYMROOT}/${CONFIGURATION}-universal\"\n\necho \"Taking device build from: ${CURRENTCONFIG_DEVICE_DIR}\"\necho \"Taking simulator build from: ${CURRENTCONFIG_SIMULATOR_DIR}\"\necho \"...I will output a universal build to: ${CURRENTCONFIG_UNIVERSAL_DIR}\"\n\nif [ ! -e \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" -o \\\n\"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" -nt \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" -o \\\n\"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\" -nt \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" ]\nthen\nrm -rf \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\ncp -R \"${CURRENTCONFIG_DEVICE_DIR}\" \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\nrm -f \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\n\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nlipo -create -output \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\necho \"Copying universal build back over to ${CURRENTCONFIG_DEVICE_DIR} and ${CURRENTCONFIG_SIMULATOR_DIR}\"\ncp \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\"\ncp \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\ntouch \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\n\nelse\necho \"Everything up to date.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE490E4F185715D9004F70CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE490F1718571917004F70CC /* RandomShape.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AE490E5F185715D9004F70CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AE490E60185715D9004F70CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE490E62185715D9004F70CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/TouchVGShape.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TouchVGShape/TouchVGShape-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AE490E63185715D9004F70CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/TouchVGShape.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TouchVGShape/TouchVGShape-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE490E4D185715D9004F70CC /* Build configuration list for PBXProject "TouchVGShape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE490E5F185715D9004F70CC /* Debug */,
+				AE490E60185715D9004F70CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE490E61185715D9004F70CC /* Build configuration list for PBXNativeTarget "TouchVGShape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE490E62185715D9004F70CC /* Debug */,
+				AE490E63185715D9004F70CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE490E4A185715D9004F70CC /* Project object */;
+}
