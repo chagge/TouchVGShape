@@ -333,7 +333,9 @@ public:                                                         \
     virtual bool offset(const Vector2d& vec, int segment);      \
     virtual float hitTest(const Point2d& pt, float tol, MgHitResult& res) const; \
 protected:                                                      \
-    virtual bool setHandlePoint2(int index, const Point2d& pt, float tol, int& data);
+    virtual bool setHandlePoint2(int index, const Point2d& pt, float tol, int& data); \
+private:                                                        \
+    virtual void addRef() {}
 
 #define MG_DECLARE_CREATE(Cls, Base, TypeNum)                   \
     MG_INHERIT_CREATE(Cls, Base, TypeNum)                       \

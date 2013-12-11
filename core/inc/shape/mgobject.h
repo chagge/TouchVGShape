@@ -18,8 +18,11 @@ public:
     //! 复制对象数据
     virtual void copy(const MgObject& src) = 0;
 
-    //! 销毁对象
+    //! 释放引用计数，为0时销毁对象
     virtual void release() = 0;
+    
+    //! 添加引用计数
+    virtual void addRef() = 0;
 
     //! 比较与另一同类对象是否相同
     virtual bool equals(const MgObject& src) const = 0;

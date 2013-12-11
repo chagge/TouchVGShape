@@ -22,8 +22,9 @@ public:
     int         _id;
     MgShapes*   _parent;
     int         _tag;
+    volatile long _refcount;
     
-    MgShapeT() : _id(0), _parent(NULL), _tag(0) {
+    MgShapeT() : _id(0), _parent(NULL), _tag(0), _refcount(1) {
     }
     
     MgShapeT(const ContextT& ctx) : _id(0), _parent(NULL), _tag(0) {
@@ -64,7 +65,12 @@ public:
     int getType() const { return Type(); }
     
     void release() {
-        delete this;
+        if (giInterlockedDecrement(&_refcount) == 0)
+            delete this;
+    }
+    
+    void addRef() {
+        giInterlockedIncrement(&_refcount);
     }
     
     MgObject* clone() const {

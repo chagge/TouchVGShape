@@ -2,7 +2,12 @@
 
 ## Overview
 
-TouchVGShape contains multiple cross-platform libraries for TouchVG framework.
+TouchVGShape contains the following cross-platform libraries for TouchVG framework:
+
+- geom: Math and geometry library.
+- graph: 2D Graphics library.
+- shape: 2D Shape library.
+- jsonstorage: A storage adapter using [rapidjson](https://github.com/Kanma/rapidjson)(a fast JSON parser/generator).
 
 This is an open source LGPL 2.1 licensed project that is in active development. Contributors and sponsors welcome.
 

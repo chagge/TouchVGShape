@@ -94,6 +94,7 @@ public:
     virtual MgObject* clone() const;
     virtual void copy(const MgObject& src);
     virtual void release();
+    virtual void addRef();
     virtual bool equals(const MgObject& src) const;
     virtual int getType() const { return Type(); }
     virtual bool isKindOf(int type) const { return type == Type(); }

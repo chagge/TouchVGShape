@@ -20,6 +20,7 @@ struct MgShapes::I
     MgObject*   owner;
     int         index;
     int         newShapeID;
+    volatile long refcount;
     
     MgShape* findShape(int sid) const;
     int getNewID(int sid);
@@ -36,6 +37,7 @@ MgShapes::MgShapes(MgObject* owner, int index)
     im->owner = owner;
     im->index = index;
     im->newShapeID = 1;
+    im->refcount = 1;
 }
 
 MgShapes::~MgShapes()
@@ -46,7 +48,13 @@ MgShapes::~MgShapes()
 
 void MgShapes::release()
 {
-    delete this;
+    if (giInterlockedDecrement(&im->refcount) == 0)
+        delete this;
+}
+
+void MgShapes::addRef()
+{
+    giInterlockedIncrement(&im->refcount);
 }
 
 MgObject* MgShapes::clone() const
@@ -152,17 +160,10 @@ MgShape* MgShapes::moveTo(int sid, MgShapes* dest)
     if (dest && dest != this) {
         shape = removeShape(sid, false);
         
-        if (shape && dest->isKindOf(Type())) {
-            MgShapes* d = (MgShapes*)dest;
-            
-            shape->setParent(d, d->im->getNewID(shape->getID()));
-            d->im->shapes.push_back(shape);
-            d->im->id2shape[sid] = shape;
-        }
-        else if (shape) {
-            MgShape* newsp = addShape(*shape);
-            shape->release();
-            shape = newsp;
+        if (shape) {
+            shape->setParent(dest, dest->im->getNewID(shape->getID()));
+            dest->im->shapes.push_back(shape);
+            dest->im->id2shape[sid] = shape;
         }
     }
     
@@ -171,8 +172,10 @@ MgShape* MgShapes::moveTo(int sid, MgShapes* dest)
 
 void MgShapes::moveAllShapesTo(MgShapes* dest)
 {
-    while (!im->shapes.empty()) {
-        moveTo(im->shapes.back()->getID(), dest);
+    if (dest && dest != this) {
+        while (!im->shapes.empty()) {
+            moveTo(im->shapes.back()->getID(), dest);
+        }
     }
 }
 
