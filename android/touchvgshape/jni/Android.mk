@@ -3,7 +3,7 @@
 LOCAL_PATH := $(call my-dir)
 cflags     := -frtti -Wall -Wextra -Wno-unused-parameter
 
-core_inc   := $(call my-dir)/../../../core/inc
+core_inc   := $(call my-dir)/../../../core/include
 c_includes := $(core_inc) \
               $(core_inc)/canvas \
               $(core_inc)/geom \

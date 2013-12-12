@@ -5,9 +5,9 @@ OBJS        =$(SRCS:.cpp=.o)
 INSTALL_DIR ?=$(ROOTDIR)/build
 
 CPPFLAGS    += -Wall \
-               -I$(ROOTDIR)/core/inc \
-               -I$(ROOTDIR)/core/inc/storage \
-               -I$(ROOTDIR)/core/inc/jsonstorage \
+               -I$(ROOTDIR)/core/include \
+               -I$(ROOTDIR)/core/include/storage \
+               -I$(ROOTDIR)/core/include/jsonstorage \
                -I..
 
 all:        $(TARGET)

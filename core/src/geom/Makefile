@@ -4,7 +4,7 @@ SRCS        =$(wildcard *.cpp)
 OBJS        =$(SRCS:.cpp=.o)
 INSTALL_DIR ?=$(ROOTDIR)/build
 
-CPPFLAGS    += -Wall -I$(ROOTDIR)/core/inc/geom
+CPPFLAGS    += -Wall -I$(ROOTDIR)/core/include/geom
 
 all:        $(TARGET)
 $(TARGET):  $(OBJS)

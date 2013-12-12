@@ -216,14 +216,14 @@
 		AE490E6418571683004F70CC /* core */ = {
 			isa = PBXGroup;
 			children = (
-				AE490E6618571683004F70CC /* inc */,
+				AE490E6618571683004F70CC /* include */,
 				AE490E9218571683004F70CC /* src */,
 			);
 			name = core;
 			path = ../../core;
 			sourceTree = "<group>";
 		};
-		AE490E6618571683004F70CC /* inc */ = {
+		AE490E6618571683004F70CC /* include */ = {
 			isa = PBXGroup;
 			children = (
 				AE490E6718571683004F70CC /* canvas */,
@@ -235,7 +235,7 @@
 				AE490E8A18571683004F70CC /* storage */,
 				AE490E8C18571683004F70CC /* test */,
 			);
-			path = inc;
+			path = include;
 			sourceTree = "<group>";
 		};
 		AE490E6718571683004F70CC /* canvas */ = {

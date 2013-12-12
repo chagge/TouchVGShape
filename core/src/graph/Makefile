@@ -5,9 +5,9 @@ OBJS        =$(SRCS:.cpp=.o)
 INSTALL_DIR ?=$(ROOTDIR)/build
 
 CPPFLAGS    += -Wall \
-               -I$(ROOTDIR)/core/inc/geom \
-               -I$(ROOTDIR)/core/inc/graph \
-               -I$(ROOTDIR)/core/inc/canvas
+               -I$(ROOTDIR)/core/include/geom \
+               -I$(ROOTDIR)/core/include/graph \
+               -I$(ROOTDIR)/core/include/canvas
 
 all:        $(TARGET)
 $(TARGET):  $(OBJS)

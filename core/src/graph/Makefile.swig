@@ -2,9 +2,9 @@ ROOTDIR  =../../..
 PKGNAME  =touchvg
 PROJNAME =graph
 
-INCLUDES += -I$(ROOTDIR)/core/inc/geom \
-            -I$(ROOTDIR)/core/inc/graph \
-            -I$(ROOTDIR)/core/inc/canvas
+INCLUDES += -I$(ROOTDIR)/core/include/geom \
+            -I$(ROOTDIR)/core/include/graph \
+            -I$(ROOTDIR)/core/include/canvas
 
 SOURCES   =$(wildcard *.cpp) \
            $(wildcard ../geom/*.cpp)
