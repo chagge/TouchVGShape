@@ -159,7 +159,7 @@ protected:
 	//! \todo Optimization with custom double-to-string converter.
 	void WriteDouble(double d) {
 		char buffer[100];
-#if _MSC_VER
+#if defined(_MSC_VER) && _MSC_VER >= 1400 // VC8
 		int ret = sprintf_s(buffer, sizeof(buffer), "%g", d);
 #else
 		int ret = snprintf(buffer, sizeof(buffer), "%g", d);

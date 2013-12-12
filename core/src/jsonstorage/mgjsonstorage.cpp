@@ -301,6 +301,13 @@ bool MgJsonStorage::Impl::save(FILE* fp, bool pretty)
     return true;
 }
 
+static inline bool parseInt(const char* str, int& value)
+{
+    char *endptr;
+    value = strtoul(str, &endptr, 0);
+    return !endptr || !*endptr;
+}
+
 int MgJsonStorage::Impl::readInt(const char* name, int defvalue)
 {
     int ret = defvalue;
@@ -314,6 +321,9 @@ int MgJsonStorage::Impl::readInt(const char* name, int defvalue)
         }
         else if (item.IsUint()) {
             ret = item.GetUint();
+        }
+        else if (item.IsString() && parseInt(item.GetString(), defvalue)) {
+            ret = defvalue;
         }
         else {
             LOGD("Invalid value for readInt(%s)", name);
@@ -437,7 +447,18 @@ void MgJsonStorage::Impl::writeInt(const char* name, int value)
 
 void MgJsonStorage::Impl::writeUInt(const char* name, int value)
 {
-    _stack.back()->AddMember(name, (unsigned)value, _doc.GetAllocator());
+    if (value >= 0 && value <= 0xFF) {
+        _stack.back()->AddMember(name, (unsigned)value, _doc.GetAllocator());
+    } else {
+        char buf[20];
+#if defined(_MSC_VER) && _MSC_VER >= 1400 // VC8
+        sprintf_s(buf, sizeof(buf), "0x%x", value);
+#else
+        snprintf(buf, sizeof(buf), "0x%x", value);
+#endif
+        Value valueCopied(buf, strlen(buf), _doc.GetAllocator());
+        _stack.back()->AddMember(name, valueCopied, _doc.GetAllocator());
+    }
 }
 
 void MgJsonStorage::Impl::writeBool(const char* name, bool value)
@@ -462,6 +483,7 @@ void MgJsonStorage::Impl::writeFloatArray(const char* name, const float* values,
 
 void MgJsonStorage::Impl::writeString(const char* name, const char* value)
 {
+    Value valueCopied(value, strlen(value), _doc.GetAllocator());
     _stack.back()->AddMember(name, value ? value : "", _doc.GetAllocator());
 }
 
