@@ -11,8 +11,7 @@ c_includes := $(core_inc) \
               $(core_inc)/jsonstorage \
               $(core_inc)/shape \
               $(core_inc)/storage \
-              $(core_inc)/test \
-              $(core_inc)/../src
+              $(core_inc)/test
 core_src   := ../../../core/src
 
 geom_files := $(core_src)/geom/mgbase.cpp \

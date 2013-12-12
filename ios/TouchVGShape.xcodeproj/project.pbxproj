@@ -56,16 +56,6 @@
 		AE490EFC18571813004F70CC /* giplclip.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA518571683004F70CC /* giplclip.h */; };
 		AE490EFD18571813004F70CC /* gixform.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EA618571683004F70CC /* gixform.cpp */; };
 		AE490EFE1857181A004F70CC /* mgjsonstorage.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EAE18571683004F70CC /* mgjsonstorage.cpp */; };
-		AE490EFF18571827004F70CC /* document.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB218571683004F70CC /* document.h */; };
-		AE490F0018571827004F70CC /* filestream.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB318571683004F70CC /* filestream.h */; };
-		AE490F011857182F004F70CC /* pow10.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB518571683004F70CC /* pow10.h */; };
-		AE490F021857182F004F70CC /* stack.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB618571683004F70CC /* stack.h */; };
-		AE490F031857182F004F70CC /* strfunc.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB718571683004F70CC /* strfunc.h */; };
-		AE490F0418571835004F70CC /* prettywriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB818571683004F70CC /* prettywriter.h */; };
-		AE490F0518571835004F70CC /* rapidjson.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EB918571683004F70CC /* rapidjson.h */; };
-		AE490F0618571835004F70CC /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EBA18571683004F70CC /* reader.h */; };
-		AE490F0718571835004F70CC /* stringbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EBD18571683004F70CC /* stringbuffer.h */; };
-		AE490F0818571835004F70CC /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490EBE18571683004F70CC /* writer.h */; };
 		AE490F091857183C004F70CC /* mgcomposite.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC218571683004F70CC /* mgcomposite.cpp */; };
 		AE490F0A1857183C004F70CC /* mgellipse.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC318571683004F70CC /* mgellipse.cpp */; };
 		AE490F0B1857183C004F70CC /* mggrid.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490EC418571683004F70CC /* mggrid.cpp */; };
@@ -134,16 +124,6 @@
 		AE490EA518571683004F70CC /* giplclip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = giplclip.h; sourceTree = "<group>"; };
 		AE490EA618571683004F70CC /* gixform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gixform.cpp; sourceTree = "<group>"; };
 		AE490EAE18571683004F70CC /* mgjsonstorage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgjsonstorage.cpp; sourceTree = "<group>"; };
-		AE490EB218571683004F70CC /* document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
-		AE490EB318571683004F70CC /* filestream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filestream.h; sourceTree = "<group>"; };
-		AE490EB518571683004F70CC /* pow10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pow10.h; sourceTree = "<group>"; };
-		AE490EB618571683004F70CC /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
-		AE490EB718571683004F70CC /* strfunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strfunc.h; sourceTree = "<group>"; };
-		AE490EB818571683004F70CC /* prettywriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prettywriter.h; sourceTree = "<group>"; };
-		AE490EB918571683004F70CC /* rapidjson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rapidjson.h; sourceTree = "<group>"; };
-		AE490EBA18571683004F70CC /* reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
-		AE490EBD18571683004F70CC /* stringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringbuffer.h; sourceTree = "<group>"; };
-		AE490EBE18571683004F70CC /* writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
 		AE490EC218571683004F70CC /* mgcomposite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgcomposite.cpp; sourceTree = "<group>"; };
 		AE490EC318571683004F70CC /* mgellipse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgellipse.cpp; sourceTree = "<group>"; };
 		AE490EC418571683004F70CC /* mggrid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mggrid.cpp; sourceTree = "<group>"; };
@@ -157,6 +137,16 @@
 		AE490ECE18571683004F70CC /* testcanvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testcanvas.cpp; sourceTree = "<group>"; };
 		AE490F14185718FA004F70CC /* RandomShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomShape.h; sourceTree = "<group>"; };
 		AE490F1618571917004F70CC /* RandomShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomShape.cpp; sourceTree = "<group>"; };
+		AEA8775618599236009AFDC6 /* document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
+		AEA8775718599236009AFDC6 /* filestream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filestream.h; sourceTree = "<group>"; };
+		AEA8775918599236009AFDC6 /* pow10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pow10.h; sourceTree = "<group>"; };
+		AEA8775A18599236009AFDC6 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		AEA8775B18599236009AFDC6 /* strfunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strfunc.h; sourceTree = "<group>"; };
+		AEA8775C18599236009AFDC6 /* prettywriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prettywriter.h; sourceTree = "<group>"; };
+		AEA8775D18599236009AFDC6 /* rapidjson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rapidjson.h; sourceTree = "<group>"; };
+		AEA8775E18599236009AFDC6 /* reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		AEA8776118599236009AFDC6 /* stringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringbuffer.h; sourceTree = "<group>"; };
+		AEA8776218599236009AFDC6 /* writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,7 +315,6 @@
 				AE490E9318571683004F70CC /* geom */,
 				AE490EA118571683004F70CC /* graph */,
 				AE490EAA18571683004F70CC /* jsonstorage */,
-				AE490EB018571683004F70CC /* rapidjson */,
 				AE490EBF18571683004F70CC /* shape */,
 				AE490ECD18571683004F70CC /* test */,
 			);
@@ -365,33 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				AE490EAE18571683004F70CC /* mgjsonstorage.cpp */,
+				AEA8775418599236009AFDC6 /* rapidjson */,
 			);
 			path = jsonstorage;
-			sourceTree = "<group>";
-		};
-		AE490EB018571683004F70CC /* rapidjson */ = {
-			isa = PBXGroup;
-			children = (
-				AE490EB218571683004F70CC /* document.h */,
-				AE490EB318571683004F70CC /* filestream.h */,
-				AE490EB418571683004F70CC /* internal */,
-				AE490EB818571683004F70CC /* prettywriter.h */,
-				AE490EB918571683004F70CC /* rapidjson.h */,
-				AE490EBA18571683004F70CC /* reader.h */,
-				AE490EBD18571683004F70CC /* stringbuffer.h */,
-				AE490EBE18571683004F70CC /* writer.h */,
-			);
-			path = rapidjson;
-			sourceTree = "<group>";
-		};
-		AE490EB418571683004F70CC /* internal */ = {
-			isa = PBXGroup;
-			children = (
-				AE490EB518571683004F70CC /* pow10.h */,
-				AE490EB618571683004F70CC /* stack.h */,
-				AE490EB718571683004F70CC /* strfunc.h */,
-			);
-			path = internal;
 			sourceTree = "<group>";
 		};
 		AE490EBF18571683004F70CC /* shape */ = {
@@ -418,6 +383,31 @@
 				AE490F1618571917004F70CC /* RandomShape.cpp */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		AEA8775418599236009AFDC6 /* rapidjson */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8775618599236009AFDC6 /* document.h */,
+				AEA8775718599236009AFDC6 /* filestream.h */,
+				AEA8775818599236009AFDC6 /* internal */,
+				AEA8775C18599236009AFDC6 /* prettywriter.h */,
+				AEA8775D18599236009AFDC6 /* rapidjson.h */,
+				AEA8775E18599236009AFDC6 /* reader.h */,
+				AEA8776118599236009AFDC6 /* stringbuffer.h */,
+				AEA8776218599236009AFDC6 /* writer.h */,
+			);
+			path = rapidjson;
+			sourceTree = "<group>";
+		};
+		AEA8775818599236009AFDC6 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8775918599236009AFDC6 /* pow10.h */,
+				AEA8775A18599236009AFDC6 /* stack.h */,
+				AEA8775B18599236009AFDC6 /* strfunc.h */,
+			);
+			path = internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,16 +466,6 @@
 				AE490EFC18571813004F70CC /* giplclip.h in Headers */,
 				AE490EFD18571813004F70CC /* gixform.cpp in Headers */,
 				AE490EFE1857181A004F70CC /* mgjsonstorage.cpp in Headers */,
-				AE490EFF18571827004F70CC /* document.h in Headers */,
-				AE490F0018571827004F70CC /* filestream.h in Headers */,
-				AE490F011857182F004F70CC /* pow10.h in Headers */,
-				AE490F021857182F004F70CC /* stack.h in Headers */,
-				AE490F031857182F004F70CC /* strfunc.h in Headers */,
-				AE490F0418571835004F70CC /* prettywriter.h in Headers */,
-				AE490F0518571835004F70CC /* rapidjson.h in Headers */,
-				AE490F0618571835004F70CC /* reader.h in Headers */,
-				AE490F0718571835004F70CC /* stringbuffer.h in Headers */,
-				AE490F0818571835004F70CC /* writer.h in Headers */,
 				AE490F091857183C004F70CC /* mgcomposite.cpp in Headers */,
 				AE490F0A1857183C004F70CC /* mgellipse.cpp in Headers */,
 				AE490F0B1857183C004F70CC /* mggrid.cpp in Headers */,
@@ -663,7 +643,6 @@
 		AE490E62185715D9004F70CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/TouchVGShape.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TouchVGShape/TouchVGShape-Prefix.pch";
@@ -675,7 +654,6 @@
 		AE490E63185715D9004F70CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/TouchVGShape.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TouchVGShape/TouchVGShape-Prefix.pch";

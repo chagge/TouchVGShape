@@ -4,8 +4,7 @@ PROJNAME =jsonstorage
 
 INCLUDES += -I$(ROOTDIR)/core/include \
             -I$(ROOTDIR)/core/include/storage \
-            -I$(ROOTDIR)/core/include/jsonstorage \
-            -I..
+            -I$(ROOTDIR)/core/include/jsonstorage
 
 SOURCES   =$(wildcard *.cpp)
 

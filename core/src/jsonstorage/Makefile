@@ -7,8 +7,7 @@ INSTALL_DIR ?=$(ROOTDIR)/build
 CPPFLAGS    += -Wall \
                -I$(ROOTDIR)/core/include \
                -I$(ROOTDIR)/core/include/storage \
-               -I$(ROOTDIR)/core/include/jsonstorage \
-               -I..
+               -I$(ROOTDIR)/core/include/jsonstorage
 
 all:        $(TARGET)
 $(TARGET):  $(OBJS)
