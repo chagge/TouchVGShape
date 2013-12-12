@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE490E58185715D9004F70CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE490E57185715D9004F70CC /* Foundation.framework */; };
 		AE490ECF1857178E004F70CC /* gicanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6818571683004F70CC /* gicanvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE490ED0185717C5004F70CC /* mgbase.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6A18571683004F70CC /* mgbase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE490ED1185717C5004F70CC /* mgbnd.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490E6B18571683004F70CC /* mgbnd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,11 +69,15 @@
 		AE490F15185718FA004F70CC /* RandomShape.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490F14185718FA004F70CC /* RandomShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE490F1718571917004F70CC /* RandomShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490F1618571917004F70CC /* RandomShape.cpp */; };
 		AE490F1818571929004F70CC /* RandomShape.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490F1618571917004F70CC /* RandomShape.cpp */; };
+		AEA8776D1859A359009AFDC6 /* mglayer.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA877691859A32F009AFDC6 /* mglayer.cpp */; };
+		AEA8776E1859A359009AFDC6 /* mglockrw.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */; };
+		AEA8776F1859A359009AFDC6 /* mgshapedoc.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */; };
+		AEA877701859A365009AFDC6 /* mglayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA877641859A30B009AFDC6 /* mglayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEA877711859A365009AFDC6 /* mgshapedoc.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA877651859A30B009AFDC6 /* mgshapedoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE490E54185715D9004F70CC /* libTouchVGShape.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTouchVGShape.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE490E57185715D9004F70CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE490E5B185715D9004F70CC /* TouchVGShape-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchVGShape-Prefix.pch"; sourceTree = "<group>"; };
 		AE490E6818571683004F70CC /* gicanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gicanvas.h; sourceTree = "<group>"; };
 		AE490E6A18571683004F70CC /* mgbase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgbase.h; sourceTree = "<group>"; };
@@ -147,6 +150,11 @@
 		AEA8775E18599236009AFDC6 /* reader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
 		AEA8776118599236009AFDC6 /* stringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringbuffer.h; sourceTree = "<group>"; };
 		AEA8776218599236009AFDC6 /* writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		AEA877641859A30B009AFDC6 /* mglayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mglayer.h; sourceTree = "<group>"; };
+		AEA877651859A30B009AFDC6 /* mgshapedoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mgshapedoc.h; sourceTree = "<group>"; };
+		AEA877691859A32F009AFDC6 /* mglayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mglayer.cpp; sourceTree = "<group>"; };
+		AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mglockrw.cpp; sourceTree = "<group>"; };
+		AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mgshapedoc.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +162,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE490E58185715D9004F70CC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +188,6 @@
 		AE490E56185715D9004F70CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE490E57185715D9004F70CC /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 				AE490E7C18571683004F70CC /* jsonstorage */,
 				AE490E7E18571683004F70CC /* mglog.h */,
 				AE490E7F18571683004F70CC /* shape */,
+				AEA877631859A30B009AFDC6 /* shapedoc */,
 				AE490E8A18571683004F70CC /* storage */,
 				AE490E8C18571683004F70CC /* test */,
 			);
@@ -316,6 +323,7 @@
 				AE490EA118571683004F70CC /* graph */,
 				AE490EAA18571683004F70CC /* jsonstorage */,
 				AE490EBF18571683004F70CC /* shape */,
+				AEA877661859A32F009AFDC6 /* shapedoc */,
 				AE490ECD18571683004F70CC /* test */,
 			);
 			path = src;
@@ -410,6 +418,25 @@
 			path = internal;
 			sourceTree = "<group>";
 		};
+		AEA877631859A30B009AFDC6 /* shapedoc */ = {
+			isa = PBXGroup;
+			children = (
+				AEA877641859A30B009AFDC6 /* mglayer.h */,
+				AEA877651859A30B009AFDC6 /* mgshapedoc.h */,
+			);
+			path = shapedoc;
+			sourceTree = "<group>";
+		};
+		AEA877661859A32F009AFDC6 /* shapedoc */ = {
+			isa = PBXGroup;
+			children = (
+				AEA877691859A32F009AFDC6 /* mglayer.cpp */,
+				AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */,
+				AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */,
+			);
+			path = shapedoc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -417,6 +444,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA877701859A365009AFDC6 /* mglayer.h in Headers */,
+				AEA877711859A365009AFDC6 /* mgshapedoc.h in Headers */,
 				AE490F15185718FA004F70CC /* RandomShape.h in Headers */,
 				AE490ECF1857178E004F70CC /* gicanvas.h in Headers */,
 				AE490ED0185717C5004F70CC /* mgbase.h in Headers */,
@@ -478,6 +507,9 @@
 				AE490F121857183C004F70CC /* mgsplines.cpp in Headers */,
 				AE490F1318571843004F70CC /* testcanvas.cpp in Headers */,
 				AE490F1818571929004F70CC /* RandomShape.cpp in Headers */,
+				AEA8776D1859A359009AFDC6 /* mglayer.cpp in Headers */,
+				AEA8776E1859A359009AFDC6 /* mglockrw.cpp in Headers */,
+				AEA8776F1859A359009AFDC6 /* mgshapedoc.cpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

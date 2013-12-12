@@ -7,6 +7,7 @@ TouchVGShape contains the following cross-platform libraries using C++ for vecto
 - geom: Math and geometry library.
 - graph: 2D Graphics interface library using geom library.
 - shape: 2D Shape library using geom and graph libraries.
+- shapedoc: Shape document library using above libraries.
 - jsonstorage: A storage adapter using [rapidjson](https://github.com/Kanma/rapidjson)(a fast JSON parser/generator).
 
 This is an open source LGPL 2.1 licensed project that is in active development. Contributors and sponsors are welcome.

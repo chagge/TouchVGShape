@@ -11,6 +11,7 @@ c_includes := $(core_inc) \
               $(core_inc)/jsonstorage \
               $(core_inc)/shape \
               $(core_inc)/storage \
+              $(core_inc)/shapedoc \
               $(core_inc)/test
 core_src   := ../../../core/src
 
@@ -41,6 +42,10 @@ shape_files := $(core_src)/shape/mgcomposite.cpp \
               $(core_src)/shape/mgshapes.cpp \
               $(core_src)/shape/mgsplines.cpp
 
+doc_files  := $(core_src)/shapedoc/mgshapedoc.cpp \
+              $(core_src)/shapedoc/mglayer.cpp \
+              $(core_src)/shapedoc/mglockrw.cpp
+
 test_files := $(core_src)/test/testcanvas.cpp \
               $(core_src)/test/RandomShape.cpp
 
@@ -49,5 +54,5 @@ LOCAL_MODULE     := libTouchVGShape
 LOCAL_CFLAGS     := $(cflags)
 LOCAL_C_INCLUDES := $(c_includes)
 LOCAL_SRC_FILES  := $(geom_files) $(graph_files) $(shape_files) \
-                    $(json_files) $(test_files)
+                    $(json_files) $(test_files) $(doc_files)
 include $(BUILD_STATIC_LIBRARY)
