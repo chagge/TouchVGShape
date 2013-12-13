@@ -69,6 +69,12 @@
 		AE490F15185718FA004F70CC /* RandomShape.h in Headers */ = {isa = PBXBuildFile; fileRef = AE490F14185718FA004F70CC /* RandomShape.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE490F1718571917004F70CC /* RandomShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490F1618571917004F70CC /* RandomShape.cpp */; };
 		AE490F1818571929004F70CC /* RandomShape.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE490F1618571917004F70CC /* RandomShape.cpp */; };
+		AE66F60E185AA3F500A22FB2 /* spfactoryimpl.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66F60D185AA3F500A22FB2 /* spfactoryimpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE66F610185AA74900A22FB2 /* mgbasicspreg.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66F60F185AA74900A22FB2 /* mgbasicspreg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE66F612185AA76600A22FB2 /* mgbasicspreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE66F611185AA76600A22FB2 /* mgbasicspreg.cpp */; };
+		AE66F614185AA89F00A22FB2 /* spfactoryimpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE66F613185AA89F00A22FB2 /* spfactoryimpl.cpp */; };
+		AE66F615185AA9BA00A22FB2 /* spfactoryimpl.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE66F613185AA89F00A22FB2 /* spfactoryimpl.cpp */; };
+		AE66F616185AA9D100A22FB2 /* mgbasicspreg.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE66F611185AA76600A22FB2 /* mgbasicspreg.cpp */; };
 		AEA8776D1859A359009AFDC6 /* mglayer.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA877691859A32F009AFDC6 /* mglayer.cpp */; };
 		AEA8776E1859A359009AFDC6 /* mglockrw.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */; };
 		AEA8776F1859A359009AFDC6 /* mgshapedoc.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */; };
@@ -140,6 +146,10 @@
 		AE490ECE18571683004F70CC /* testcanvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = testcanvas.cpp; sourceTree = "<group>"; };
 		AE490F14185718FA004F70CC /* RandomShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomShape.h; sourceTree = "<group>"; };
 		AE490F1618571917004F70CC /* RandomShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomShape.cpp; sourceTree = "<group>"; };
+		AE66F60D185AA3F500A22FB2 /* spfactoryimpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spfactoryimpl.h; sourceTree = "<group>"; };
+		AE66F60F185AA74900A22FB2 /* mgbasicspreg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgbasicspreg.h; sourceTree = "<group>"; };
+		AE66F611185AA76600A22FB2 /* mgbasicspreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgbasicspreg.cpp; sourceTree = "<group>"; };
+		AE66F613185AA89F00A22FB2 /* spfactoryimpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = spfactoryimpl.cpp; sourceTree = "<group>"; };
 		AEA8775618599236009AFDC6 /* document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = document.h; sourceTree = "<group>"; };
 		AEA8775718599236009AFDC6 /* filestream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filestream.h; sourceTree = "<group>"; };
 		AEA8775918599236009AFDC6 /* pow10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pow10.h; sourceTree = "<group>"; };
@@ -295,6 +305,7 @@
 				AE490E8718571683004F70CC /* mgshapet.h */,
 				AE490E8818571683004F70CC /* mgshapetype.h */,
 				AE490E8918571683004F70CC /* mgspfactory.h */,
+				AE66F60F185AA74900A22FB2 /* mgbasicspreg.h */,
 			);
 			path = shape;
 			sourceTree = "<group>";
@@ -370,6 +381,7 @@
 		AE490EBF18571683004F70CC /* shape */ = {
 			isa = PBXGroup;
 			children = (
+				AE66F611185AA76600A22FB2 /* mgbasicspreg.cpp */,
 				AE490EC218571683004F70CC /* mgcomposite.cpp */,
 				AE490EC318571683004F70CC /* mgellipse.cpp */,
 				AE490EC418571683004F70CC /* mggrid.cpp */,
@@ -423,6 +435,7 @@
 			children = (
 				AEA877641859A30B009AFDC6 /* mglayer.h */,
 				AEA877651859A30B009AFDC6 /* mgshapedoc.h */,
+				AE66F60D185AA3F500A22FB2 /* spfactoryimpl.h */,
 			);
 			path = shapedoc;
 			sourceTree = "<group>";
@@ -433,6 +446,7 @@
 				AEA877691859A32F009AFDC6 /* mglayer.cpp */,
 				AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */,
 				AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */,
+				AE66F613185AA89F00A22FB2 /* spfactoryimpl.cpp */,
 			);
 			path = shapedoc;
 			sourceTree = "<group>";
@@ -444,6 +458,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE66F610185AA74900A22FB2 /* mgbasicspreg.h in Headers */,
+				AE66F60E185AA3F500A22FB2 /* spfactoryimpl.h in Headers */,
 				AEA877701859A365009AFDC6 /* mglayer.h in Headers */,
 				AEA877711859A365009AFDC6 /* mgshapedoc.h in Headers */,
 				AE490F15185718FA004F70CC /* RandomShape.h in Headers */,
@@ -505,11 +521,13 @@
 				AE490F101857183C004F70CC /* mgshape.cpp in Headers */,
 				AE490F111857183C004F70CC /* mgshapes.cpp in Headers */,
 				AE490F121857183C004F70CC /* mgsplines.cpp in Headers */,
+				AE66F616185AA9D100A22FB2 /* mgbasicspreg.cpp in Headers */,
 				AE490F1318571843004F70CC /* testcanvas.cpp in Headers */,
 				AE490F1818571929004F70CC /* RandomShape.cpp in Headers */,
 				AEA8776D1859A359009AFDC6 /* mglayer.cpp in Headers */,
 				AEA8776E1859A359009AFDC6 /* mglockrw.cpp in Headers */,
 				AEA8776F1859A359009AFDC6 /* mgshapedoc.cpp in Headers */,
+				AE66F615185AA9BA00A22FB2 /* spfactoryimpl.cpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE66F614185AA89F00A22FB2 /* spfactoryimpl.cpp in Sources */,
+				AE66F612185AA76600A22FB2 /* mgbasicspreg.cpp in Sources */,
 				AE490F1718571917004F70CC /* RandomShape.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

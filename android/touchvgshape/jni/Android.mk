@@ -40,10 +40,12 @@ shape_files := $(core_src)/shape/mgcomposite.cpp \
               $(core_src)/shape/mgrect.cpp \
               $(core_src)/shape/mgshape.cpp \
               $(core_src)/shape/mgshapes.cpp \
-              $(core_src)/shape/mgsplines.cpp
+              $(core_src)/shape/mgsplines.cpp \
+              $(core_src)/shape/mgbasicspreg.cpp
 
 doc_files  := $(core_src)/shapedoc/mgshapedoc.cpp \
               $(core_src)/shapedoc/mglayer.cpp \
+              $(core_src)/shapedoc/spfactoryimpl.cpp \
               $(core_src)/shapedoc/mglockrw.cpp
 
 test_files := $(core_src)/test/testcanvas.cpp \
