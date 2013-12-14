@@ -37,6 +37,8 @@ public:
     MgObject& operator=(const MgObject& src) { copy(src); return *this; }
     bool operator==(const MgObject& src) const { return equals(src); }
     bool operator!=(const MgObject& src) const { return !equals(src); }
+    
+    template <class T> static void release(T*& p) { if (p) { p->release(); p = (T*)0; } }
 #endif // SWIG
 
 protected:
