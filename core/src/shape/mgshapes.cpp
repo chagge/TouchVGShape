@@ -24,6 +24,12 @@ struct MgShapes::I
     
     MgShape* findShape(int sid) const;
     int getNewID(int sid);
+    
+    iterator findPosition(int sid) {
+        iterator it = shapes.begin();
+        for (; it != shapes.end() && (*it)->getID() != sid; ++it) ;
+        return it;
+    }
 };
 
 MgShapes* MgShapes::create(MgObject* owner, int index)
@@ -68,12 +74,19 @@ void MgShapes::copy(const MgObject&)
 {
 }
 
-void MgShapes::copyShapes(const MgShapes* src)
+void MgShapes::copyShapes(const MgShapes* src, bool deeply)
 {
     clear();
+    
     MgShapeIterator it(src);
     while (MgShape* sp = it.getNext()) {
-        addShape(*sp);
+        if (deeply) {
+            addShape(*sp);
+        } else {
+            sp->addRef();
+            im->shapes.push_back(sp);
+            im->id2shape[sp->getID()] = sp;
+        }
     }
 }
 
@@ -139,17 +152,17 @@ MgShape* MgShapes::addShapeByType(MgShapeFactory* factory, int type)
 
 MgShape* MgShapes::removeShape(int sid, bool skipLockedShape)
 {
-    for (I::iterator it = im->shapes.begin(); it != im->shapes.end(); ++it) {
+    I::iterator it = im->findPosition(sid);
+    
+    if (it != im->shapes.end()) {
         MgShape* shape = *it;
-        if (shape->getID() == sid) {
-            if (skipLockedShape && shape->shapec()->getFlag(kMgShapeLocked)) {
-                return NULL;
-            }
+        if (!skipLockedShape || !shape->shapec()->getFlag(kMgShapeLocked)) {
             im->shapes.erase(it);
             im->id2shape.erase(shape->getID());
             return shape;
         }
     }
+    
     return NULL;
 }
 
@@ -181,14 +194,15 @@ void MgShapes::moveAllShapesTo(MgShapes* dest)
 
 bool MgShapes::bringToFront(int sid)
 {
-    for (I::iterator it = im->shapes.begin(); it != im->shapes.end(); ++it) {
+    I::iterator it = im->findPosition(sid);
+    
+    if (it != im->shapes.end()) {
         MgShape* shape = *it;
-        if (shape->getID() == sid) {
-            im->shapes.erase(it);
-            im->shapes.push_back(shape);
-            return true;
-        }
+        im->shapes.erase(it);
+        im->shapes.push_back(shape);
+        return true;
     }
+    
     return false;
 }
 
@@ -376,33 +390,37 @@ bool MgShapes::load(MgShapeFactory* factory, MgStorage* s, bool addOnly)
             clear();
         
         ret = loadExtra(s);
-        //s->readFloatArray("extent", &rect.xmin, 4);
+        //s->readFloatArray("extent", &rect.xmin, 4); Comment out to avoid reporting absence warning
         int n = s->readInt("count", 0);
         
         for (; ret && s->readNode("shape", index, false); n--) {
             const int type = s->readInt("type", 0);
-            const int id = s->readInt("id", 0);
+            const int sid = s->readInt("id", 0);
             s->readFloatArray("extent", &rect.xmin, 4);
             
-            MgShape* shape = addOnly && id ? findShape(id) : NULL;
+            MgShape* oldsp = addOnly && sid ? findShape(sid) : NULL;
+            MgShape* newsp = factory->createShape(type);
             
-            if (shape && shape->shape()->getType() == type) {
-                ret = shape->load(factory, s);
-                shape->shape()->setFlag(kMgClosed, shape->shape()->isClosed());
+            if (oldsp && oldsp->shape()->getType() != type) {
+                oldsp = NULL;
             }
-            else {
-                shape = factory->createShape(type);
-                if (shape) {
-                    shape->setParent(this, im->getNewID(id));
-                    ret = shape->load(factory, s);
-                    if (ret) {
-                        shape->shape()->setFlag(kMgClosed, shape->shape()->isClosed());
-                        im->shapes.push_back(shape);
-                        im->id2shape[shape->getID()] = shape;
+            if (newsp) {
+                newsp->setParent(this, oldsp ? sid : im->getNewID(sid));
+                ret = newsp->load(factory, s);
+                if (ret) {
+                    newsp->shape()->setFlag(kMgClosed, newsp->shape()->isClosed());
+                    im->id2shape[newsp->getID()] = newsp;
+                    if (oldsp) {    // replace the shape object
+                        *(im->findPosition(sid)) = newsp;
+                        newsp->shape()->resetChangeCount(oldsp->shape()->getChangeCount() + 1);
+                        oldsp->release();
                     }
                     else {
-                        shape->release();
+                        im->shapes.push_back(newsp);
                     }
+                }
+                else {
+                    newsp->release();
                 }
             }
             s->readNode("shape", index++, true);

@@ -140,8 +140,11 @@ public:
     //! 返回图形模型坐标范围
     virtual Box2d getExtent() const;
 
-    //! 返回改变计数
+    //! 返回改变计数，该数将不永久保存
     virtual long getChangeCount() const;
+    
+    //! 重置改变计数
+    virtual void resetChangeCount(long count);
     
     //! update() 或改变图形内容后调用
     virtual void afterChanged();

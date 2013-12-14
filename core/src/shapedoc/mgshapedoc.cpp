@@ -74,10 +74,36 @@ void MgShapeDoc::copy(const MgObject& src)
 {
     if (src.isKindOf(Type())) {
         const MgShapeDoc& doc = (const MgShapeDoc&)src;
+        
         im->xf = doc.im->xf;
         im->rectW = doc.im->rectW;
         im->viewScale = doc.im->viewScale;
+        im->context = doc.im->context;
     }
+}
+
+void MgShapeDoc::copyShapes(const MgShapeDoc* src, bool deeply)
+{
+    unsigned i;
+    
+    copy(*src);
+    
+    for (i = 0; i < im->layers.size() && i < src->im->layers.size(); i++) {
+        im->layers[i]->copyShapes(src->im->layers[i], deeply);
+    }
+    for (; i < src->im->layers.size(); i++) {
+        MgLayer* newLayer = MgLayer::create(this, i);
+        newLayer->copyShapes(src->im->layers[i], deeply);
+        im->layers.push_back(newLayer);
+    }
+    while (i < im->layers.size()) {
+        im->layers.back()->release();
+        im->layers.pop_back();
+    }
+    
+    im->curLayer = im->layers[src->im->curLayer->getIndex()];
+    im->curShapes = im->curLayer;
+    im->changeCount = src->im->changeCount;
 }
 
 bool MgShapeDoc::equals(const MgObject& src) const

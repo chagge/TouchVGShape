@@ -28,5 +28,5 @@ void MgShapeFactoryImpl::registerShape(int type, MgShape* (*creator)())
 MgShape* MgShapeFactoryImpl::createShape(int type)
 {
     std::map<int, MgShape* (*)()>::const_iterator it = _shapeCreators.find(type & 0xFFFF);
-    return it != _shapeCreators.end() ? (it->second)() : NULL;
+    return it != _shapeCreators.end() ? (it->second)() : (MgShape*)0;
 }

@@ -63,8 +63,8 @@ public:
     //! 释放临时数据内存
     void clearCachedData();
 
-    //! 复制(深拷贝)每一个图形
-    void copyShapes(const MgShapes* src);
+    //! 复制(默认为深拷贝)每一个图形，浅拷贝则添加图形的引用计数且不改变图形的拥有者
+    void copyShapes(const MgShapes* src, bool deeply = true);
     
     //! 复制出新图形并添加到图形列表中
     MgShape* addShape(const MgShape& src);

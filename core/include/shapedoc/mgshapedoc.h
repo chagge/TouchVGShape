@@ -45,15 +45,15 @@ class MgShapeDoc : public MgObject
 public:
     //! 返回本对象的类型
     static int Type() { return 8; }
-
-    //! 复制出一个新图形文档对象
+    
+    //! 复制出一个新图形文档对象，不复制图形
     MgShapeDoc* cloneDoc() const { return (MgShapeDoc*)clone(); }
+    
+    //! 复制(默认为深拷贝)每一个图形，浅拷贝则添加图形的引用计数且不改变图形的拥有者
+    void copyShapes(const MgShapeDoc* src, bool deeply);
 
     //! 创建图形文档对象
     static MgShapeDoc* createDoc();
-
-    //! 增加引用
-    void addRef();
 
     //! 保存图形
     bool save(MgStorage* s, int startIndex) const;
@@ -140,6 +140,7 @@ public:
     virtual MgObject* clone() const;
     virtual void copy(const MgObject& src);
     virtual void release();
+    virtual void addRef();
     virtual bool equals(const MgObject& src) const;
     virtual int getType() const { return Type(); }
     virtual bool isKindOf(int type) const { return type == Type(); }

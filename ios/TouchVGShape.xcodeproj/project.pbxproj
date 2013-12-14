@@ -75,6 +75,33 @@
 		AE66F614185AA89F00A22FB2 /* spfactoryimpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE66F613185AA89F00A22FB2 /* spfactoryimpl.cpp */; };
 		AE66F615185AA9BA00A22FB2 /* spfactoryimpl.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE66F613185AA89F00A22FB2 /* spfactoryimpl.cpp */; };
 		AE66F616185AA9D100A22FB2 /* mgbasicspreg.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AE66F611185AA76600A22FB2 /* mgbasicspreg.cpp */; };
+		AE66F621185AD83500A22FB2 /* testcanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490ECE18571683004F70CC /* testcanvas.cpp */; };
+		AE66F622185AD83D00A22FB2 /* mglayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA877691859A32F009AFDC6 /* mglayer.cpp */; };
+		AE66F623185AD83D00A22FB2 /* mglockrw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */; };
+		AE66F624185AD83D00A22FB2 /* mgshapedoc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */; };
+		AE66F625185AD84300A22FB2 /* mgcomposite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC218571683004F70CC /* mgcomposite.cpp */; };
+		AE66F626185AD84300A22FB2 /* mgellipse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC318571683004F70CC /* mgellipse.cpp */; };
+		AE66F627185AD84300A22FB2 /* mggrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC418571683004F70CC /* mggrid.cpp */; };
+		AE66F628185AD84300A22FB2 /* mgline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC518571683004F70CC /* mgline.cpp */; };
+		AE66F629185AD84300A22FB2 /* mglines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC618571683004F70CC /* mglines.cpp */; };
+		AE66F62A185AD84300A22FB2 /* mgrdrect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC718571683004F70CC /* mgrdrect.cpp */; };
+		AE66F62B185AD84300A22FB2 /* mgrect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC818571683004F70CC /* mgrect.cpp */; };
+		AE66F62C185AD84300A22FB2 /* mgshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EC918571683004F70CC /* mgshape.cpp */; };
+		AE66F62D185AD84300A22FB2 /* mgshapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490ECA18571683004F70CC /* mgshapes.cpp */; };
+		AE66F62E185AD84300A22FB2 /* mgsplines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490ECB18571683004F70CC /* mgsplines.cpp */; };
+		AE66F62F185AD84D00A22FB2 /* mgjsonstorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EAE18571683004F70CC /* mgjsonstorage.cpp */; };
+		AE66F630185AD86500A22FB2 /* gigraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EA218571683004F70CC /* gigraph.cpp */; };
+		AE66F631185AD86500A22FB2 /* gipath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EA418571683004F70CC /* gipath.cpp */; };
+		AE66F632185AD86500A22FB2 /* gixform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EA618571683004F70CC /* gixform.cpp */; };
+		AE66F633185AD86F00A22FB2 /* mgbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9718571683004F70CC /* mgbase.cpp */; };
+		AE66F634185AD86F00A22FB2 /* mgbnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9818571683004F70CC /* mgbnd.cpp */; };
+		AE66F635185AD86F00A22FB2 /* mgbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9918571683004F70CC /* mgbox.cpp */; };
+		AE66F636185AD86F00A22FB2 /* mgcurv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9A18571683004F70CC /* mgcurv.cpp */; };
+		AE66F638185AD86F00A22FB2 /* mglnrel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9C18571683004F70CC /* mglnrel.cpp */; };
+		AE66F639185AD86F00A22FB2 /* mgmat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9D18571683004F70CC /* mgmat.cpp */; };
+		AE66F63A185AD86F00A22FB2 /* mgnear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9E18571683004F70CC /* mgnear.cpp */; };
+		AE66F63B185AD86F00A22FB2 /* mgnearbz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490E9F18571683004F70CC /* mgnearbz.cpp */; };
+		AE66F63C185AD86F00A22FB2 /* mgvec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE490EA018571683004F70CC /* mgvec.cpp */; };
 		AEA8776D1859A359009AFDC6 /* mglayer.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA877691859A32F009AFDC6 /* mglayer.cpp */; };
 		AEA8776E1859A359009AFDC6 /* mglockrw.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA8776A1859A32F009AFDC6 /* mglockrw.cpp */; };
 		AEA8776F1859A359009AFDC6 /* mgshapedoc.cpp in Headers */ = {isa = PBXBuildFile; fileRef = AEA8776B1859A32F009AFDC6 /* mgshapedoc.cpp */; };
@@ -613,6 +640,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE66F633185AD86F00A22FB2 /* mgbase.cpp in Sources */,
+				AE66F634185AD86F00A22FB2 /* mgbnd.cpp in Sources */,
+				AE66F635185AD86F00A22FB2 /* mgbox.cpp in Sources */,
+				AE66F636185AD86F00A22FB2 /* mgcurv.cpp in Sources */,
+				AE66F638185AD86F00A22FB2 /* mglnrel.cpp in Sources */,
+				AE66F639185AD86F00A22FB2 /* mgmat.cpp in Sources */,
+				AE66F63A185AD86F00A22FB2 /* mgnear.cpp in Sources */,
+				AE66F63B185AD86F00A22FB2 /* mgnearbz.cpp in Sources */,
+				AE66F63C185AD86F00A22FB2 /* mgvec.cpp in Sources */,
+				AE66F630185AD86500A22FB2 /* gigraph.cpp in Sources */,
+				AE66F631185AD86500A22FB2 /* gipath.cpp in Sources */,
+				AE66F632185AD86500A22FB2 /* gixform.cpp in Sources */,
+				AE66F62F185AD84D00A22FB2 /* mgjsonstorage.cpp in Sources */,
+				AE66F625185AD84300A22FB2 /* mgcomposite.cpp in Sources */,
+				AE66F626185AD84300A22FB2 /* mgellipse.cpp in Sources */,
+				AE66F627185AD84300A22FB2 /* mggrid.cpp in Sources */,
+				AE66F628185AD84300A22FB2 /* mgline.cpp in Sources */,
+				AE66F629185AD84300A22FB2 /* mglines.cpp in Sources */,
+				AE66F62A185AD84300A22FB2 /* mgrdrect.cpp in Sources */,
+				AE66F62B185AD84300A22FB2 /* mgrect.cpp in Sources */,
+				AE66F62C185AD84300A22FB2 /* mgshape.cpp in Sources */,
+				AE66F62D185AD84300A22FB2 /* mgshapes.cpp in Sources */,
+				AE66F62E185AD84300A22FB2 /* mgsplines.cpp in Sources */,
+				AE66F622185AD83D00A22FB2 /* mglayer.cpp in Sources */,
+				AE66F623185AD83D00A22FB2 /* mglockrw.cpp in Sources */,
+				AE66F624185AD83D00A22FB2 /* mgshapedoc.cpp in Sources */,
+				AE66F621185AD83500A22FB2 /* testcanvas.cpp in Sources */,
 				AE66F614185AA89F00A22FB2 /* spfactoryimpl.cpp in Sources */,
 				AE66F612185AA76600A22FB2 /* mgbasicspreg.cpp in Sources */,
 				AE490F1718571917004F70CC /* RandomShape.cpp in Sources */,
