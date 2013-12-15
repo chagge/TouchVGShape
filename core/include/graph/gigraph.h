@@ -340,18 +340,18 @@ public:
      */
     bool drawHandle(const Point2d& pnt, int type, bool modelUnit = true);
 
+    //! 在显示适配类的 beginPaint() 中调用
+    bool beginPaint(GiCanvas* canvas, const RECT_2D& clipBox = RECT_2D());
+
+    //! 在显示适配类的 endPaint() 中调用
+    void endPaint();
+    
 #ifndef SWIG
     //! 返回当前绘图画布对象
     GiCanvas* getCanvas();
     
     //! 返回坐标系管理对象
     GiTransform& _xf();
-
-    //! 在显示适配类的 beginPaint() 中调用
-    bool beginPaint(GiCanvas* canvas, const RECT_2D& clipBox = RECT_2D());
-
-    //! 在显示适配类的 endPaint() 中调用
-    void endPaint();
     
     bool rawLine(const GiContext* ctx, float x1, float y1, float x2, float y2);
     bool rawLines(const GiContext* ctx, const Point2d* pxs, int count);
