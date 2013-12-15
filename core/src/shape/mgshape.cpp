@@ -223,7 +223,7 @@ bool MgShape::draw(int mode, GiGraphics& gs, const GiContext *ctx, int segment) 
 
     rect.inflate(1 + gs.calcPenWidth(tmpctx.getLineWidth(), tmpctx.isAutoScale()) / 2);
 
-    if (gs.beginShape(shapec()->getType(), shapec()->getChangeCount(), getID(), rect.xmin,
+    if (gs.beginShape(shapec()->getType(), getID(), shapec()->getChangeCount(), rect.xmin,
         rect.ymin, rect.width(), rect.height())) {
         ret = shapec()->draw(mode, gs, tmpctx, segment);
         gs.endShape(shapec()->getType(), getID(), rect.xmin, rect.ymin);
