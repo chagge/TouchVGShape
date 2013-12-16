@@ -100,7 +100,8 @@ bool GiGraphics::isStopping() const
 
 void GiGraphics::stopDrawing()
 {
-    giInterlockedIncrement(&m_impl->stopping);
+    if (!isStopping())
+        giInterlockedIncrement(&m_impl->stopping);
 }
 
 GiCanvas* GiGraphics::getCanvas()

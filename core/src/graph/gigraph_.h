@@ -40,6 +40,7 @@ public:
     {
         drawRefcnt = 0;
         drawColors = 0;
+        stopping = 0;
         isPrint = false;
         ctxused = 0;
         bkcolor = GiColor::White();
