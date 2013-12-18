@@ -98,10 +98,12 @@ bool GiGraphics::isStopping() const
     return m_impl->stopping > 0;
 }
 
-void GiGraphics::stopDrawing()
+void GiGraphics::stopDrawing(bool stopped)
 {
-    if (!isStopping())
+    if (m_impl->stopping == 0 && stopped)
         giInterlockedIncrement(&m_impl->stopping);
+    else if (m_impl->stopping > 0 && !stopped)
+        giInterlockedDecrement(&m_impl->stopping);
 }
 
 GiCanvas* GiGraphics::getCanvas()

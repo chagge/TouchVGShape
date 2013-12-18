@@ -59,7 +59,7 @@ public:
     bool isStopping() const;
     
     //! 标记需要停止绘图
-    void stopDrawing();
+    void stopDrawing(bool stopped = true);
 
 public:
     //! 返回剪裁框，模型坐标
