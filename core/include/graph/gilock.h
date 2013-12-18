@@ -34,4 +34,6 @@
 #endif
 #endif // SWIG
 
+void giSleep(int ms);
+
 #endif // TOUCHVG_GILOCK_H_
