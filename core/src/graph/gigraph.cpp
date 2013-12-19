@@ -48,14 +48,13 @@ GiTransform& GiGraphics::_xf()
 
 bool GiGraphics::beginPaint(GiCanvas* canvas, const RECT_2D& clipBox)
 {
-    if (!canvas || m_impl->canvas || m_impl->drawRefcnt > 0) {
+    if (!canvas || m_impl->canvas) {
         return false;
     }
     
     m_impl->canvas = canvas;
     m_impl->ctxused = 0;
     m_impl->stopping = 0;
-    giInterlockedIncrement(&m_impl->drawRefcnt);
     
     if (m_impl->lastZoomTimes != xf().getZoomTimes()) {
         m_impl->zoomChanged();
@@ -80,12 +79,11 @@ bool GiGraphics::beginPaint(GiCanvas* canvas, const RECT_2D& clipBox)
 void GiGraphics::endPaint()
 {
     m_impl->canvas = NULL;
-    giInterlockedDecrement(&m_impl->drawRefcnt);
 }
 
 bool GiGraphics::isDrawing() const
 {
-    return m_impl->drawRefcnt > 0;
+    return !!m_impl->canvas;
 }
 
 bool GiGraphics::isPrint() const
@@ -129,7 +127,7 @@ RECT_2D& GiGraphics::getClipBox(RECT_2D& rc) const
 
 bool GiGraphics::setClipBox(const RECT_2D& rc)
 {
-    if (m_impl->drawRefcnt < 1)
+    if (!isDrawing())
         return false;
 
     bool ret = false;
@@ -277,10 +275,6 @@ bool GiGraphics::drawLine(const GiContext* ctx,
                           const Point2d& startPt, const Point2d& endPt, 
                           bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0)
-        return false;
-    GiLock lock (&m_impl->drawRefcnt);
-
     if (!DRAW_RECT(m_impl, modelUnit).isIntersect(Box2d(startPt, endPt)))
         return false;
 
@@ -374,11 +368,10 @@ static bool DrawEdge(int count, int &i, Point2d* pts, Point2d &ptLast,
 bool GiGraphics::drawLines(const GiContext* ctx, int count, 
                            const Point2d* points, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 2 || points == NULL)
+    if (count < 2 || points == NULL)
         return false;
     if (count > 0x2000)
         count = 0x2000;
-    GiLock lock (&m_impl->drawRefcnt);
 
     int i;
     Point2d pt1, pt2, ptLast;
@@ -428,9 +421,8 @@ bool GiGraphics::drawLines(const GiContext* ctx, int count,
 bool GiGraphics::drawBeziers(const GiContext* ctx, int count, 
                              const Point2d* points, bool closed, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 4 || points == NULL)
+    if (count < 4 || points == NULL)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     if (count > 0x2000)
         count = 0x2000;
     count = 1 + (count - 1) / 3 * 3;
@@ -503,9 +495,8 @@ bool GiGraphics::drawArc(const GiContext* ctx,
                          float startAngle, float sweepAngle, 
                          bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || rx < _MGZERO || fabsf(sweepAngle) < 1e-5f)
+    if (rx < _MGZERO || fabsf(sweepAngle) < 1e-5f)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
 
     if (ry < _MGZERO)
         ry = rx;
@@ -632,9 +623,8 @@ bool GiGraphics::_drawPolygon(const GiContext* ctx, int count, const Point2d* po
 bool GiGraphics::drawPolygon(const GiContext* ctx, int count, 
                              const Point2d* points, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 2 || points == NULL)
+    if (count < 2 || points == NULL)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     
     count = count > 0x2000 ? 0x2000 : count;
     ctx = ctx ? ctx : &(m_impl->ctx);
@@ -681,9 +671,9 @@ bool GiGraphics::drawEllipse(const GiContext* ctx, const Box2d& rect, bool model
 bool GiGraphics::drawEllipse(const GiContext* ctx, const Point2d& center, 
                              float rx, float ry, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || rx < _MGZERO)
+    if (rx < _MGZERO)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
+    
     bool ret = false;
     Matrix2d matD(S2D(xf(), modelUnit));
 
@@ -731,9 +721,8 @@ bool GiGraphics::drawPie(const GiContext* ctx,
                          float startAngle, float sweepAngle, 
                          bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || rx < _MGZERO || fabsf(sweepAngle) < 1e-5f)
+    if (rx < _MGZERO || fabsf(sweepAngle) < 1e-5f)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
 
     if (ry < _MGZERO)
         ry = rx;
@@ -784,9 +773,8 @@ bool GiGraphics::drawRoundRect(const GiContext* ctx,
                                const Box2d& rect, float rx, float ry, 
                                bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || rect.isEmpty())
+    if (rect.isEmpty())
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     bool ret = false;
 
     if (ry < _MGZERO)
@@ -837,10 +825,8 @@ bool GiGraphics::drawSplines(const GiContext* ctx, int count,
                              const Point2d* knots, 
                              const Vector2d* knotvs, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 2 
-        || knots == NULL || knotvs == NULL)
+    if (count < 2 || knots == NULL || knotvs == NULL)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     count = mgMin(count, static_cast<int>(1 + (0x2000 - 1) / 3));
 
     int i;
@@ -874,10 +860,8 @@ bool GiGraphics::drawClosedSplines(const GiContext* ctx, int count,
                                    const Vector2d* knotvs, 
                                    bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 2 || 
-        knots == NULL || knotvs == NULL)
+    if (count < 2 || knots == NULL || knotvs == NULL)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     count = mgMin(count, static_cast<int>((0x2000 - 1) / 3));
 
     int i, j = 0;
@@ -924,9 +908,8 @@ bool GiGraphics::drawClosedSplines(const GiContext* ctx, int count,
 bool GiGraphics::drawBSplines(const GiContext* ctx, int count, 
                               const Point2d* ctlpts, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 4 || ctlpts == NULL)
+    if (count < 4 || ctlpts == NULL)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     count = mgMin(count, static_cast<int>(3 + (0x2000 - 1) / 3));
 
     const Box2d extent (count, ctlpts);              // 模型坐标范围
@@ -974,9 +957,8 @@ bool GiGraphics::drawClosedBSplines(const GiContext* ctx,
                                     const Point2d* ctlpts, 
                                     bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 3 || ctlpts == NULL)
+    if (count < 3 || ctlpts == NULL)
         return false;
-    GiLock lock (&m_impl->drawRefcnt);
     count = mgMin(count, static_cast<int>((0x2000 - 1) / 3));
 
     const Box2d extent (count, ctlpts);              // 模型坐标范围
@@ -1035,10 +1017,9 @@ bool GiGraphics::drawClosedBSplines(const GiContext* ctx,
 bool GiGraphics::drawQuadSplines(const GiContext* ctx, int count,
                                  const Point2d* ctlpts, bool modelUnit)
 {
-    if (m_impl->drawRefcnt == 0 || count < 3 || ctlpts == NULL)
+    if (count < 3 || ctlpts == NULL)
         return false;
     
-    GiLock lock (&m_impl->drawRefcnt);
     const Box2d wndrect (DRAW_RECT(m_impl, modelUnit));
     const Matrix2d matD(S2D(xf(), modelUnit));
     Point2d mid1, mid2, pt, pt2;

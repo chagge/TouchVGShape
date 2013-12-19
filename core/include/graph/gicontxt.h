@@ -43,9 +43,8 @@ public:
     //! 默认构造函数
     /*! 绘图参数为1像素宽的黑实线、不填充
     */
-    GiContext() : m_type(0), m_lineStyle(kGiLineSolid), m_lineWidth(0)
-        , m_lineColor(GiColor::Black()), m_fillColor(GiColor::Invalid())
-        , m_autoFillColor(false), m_autoScale(false)
+    GiContext() : m_lineStyle(kGiLineSolid), m_lineWidth(0)
+        , m_lineColor(GiColor::Black()), m_fillColor(GiColor::Invalid()), m_autoScale(false)
     {
     }
     
@@ -59,8 +58,8 @@ public:
     */
     GiContext(float width, GiColor color = GiColor::Black(), int style = kGiLineSolid,
               const GiColor& fillcr = GiColor::Invalid(), bool autoScale = false)
-        : m_type(0), m_lineStyle(style), m_lineWidth(width)
-        , m_lineColor(color), m_fillColor(fillcr), m_autoFillColor(false), m_autoScale(autoScale)
+        : m_lineStyle(style), m_lineWidth(width)
+        , m_lineColor(color), m_fillColor(fillcr), m_autoScale(autoScale)
     {
     }
     
@@ -71,7 +70,6 @@ public:
         m_lineWidth = src.m_lineWidth;
         m_lineColor = src.m_lineColor;
         m_fillColor = src.m_fillColor;
-        m_autoFillColor = src.m_autoFillColor;
         m_autoScale = src.m_autoScale;
     }
 
@@ -80,35 +78,26 @@ public:
     {
         if (this != &src)
         {
-            if (mask & 0x01) {
+            if (mask & kContextLineRGB) {
                 GiColor c = src.m_lineColor;
                 m_lineColor.set(c.r, c.g, c.b);
-                if (m_autoFillColor) {
-                    m_fillColor = m_lineColor;
-                    m_fillColor.a /= 3;
-                }
             }
-            if (mask & 0x02) {
+            if (mask & kContextLineAlpha) {
                 m_lineColor.a = src.m_lineColor.a;
-                if (m_autoFillColor) {
-                    m_fillColor.a = (unsigned char)(m_lineColor.a / 3);
-                }
             }
-            if (mask & 0x04) {
+            if (mask & kContextLineWidth) {
                 m_lineWidth = src.m_lineWidth;
                 m_autoScale = src.m_autoScale;
             }
-            if (mask & 0x08) {
+            if (mask & kContextLineStyle) {
                 m_lineStyle = src.m_lineStyle;
             }
-            if (mask & 0x10) {
+            if (mask & kContextFillRGB) {
                 GiColor c = src.m_fillColor;
                 m_fillColor.set(c.r, c.g, c.b);
-                m_autoFillColor = src.m_autoFillColor;
             }
-            if (mask & 0x20) {
-                m_fillColor.a = src.m_autoFillColor ? (unsigned char)(src.m_lineColor.a / 3) : src.m_fillColor.a;
-                m_autoFillColor = src.m_autoFillColor;
+            if (mask & kContextFillAlpha) {
+                m_fillColor.a = src.m_fillColor.a;
             }
         }
         return *this;
@@ -121,8 +110,7 @@ public:
             && m_lineWidth == src.m_lineWidth
             && m_autoScale == src.m_autoScale
             && m_lineColor == src.m_lineColor
-            && m_fillColor == src.m_fillColor
-            && m_autoFillColor == src.m_autoFillColor;
+            && m_fillColor == src.m_fillColor;
     }
     
 #ifndef SWIG
@@ -206,30 +194,18 @@ public:
     void setLineColor(const GiColor& color)
     {
         m_lineColor = color;
-        if (m_autoFillColor) {
-            m_fillColor = m_lineColor;
-            m_fillColor.a /= 3;
-        }
     }
     
     //! 设置线条颜色
     void setLineColor(int r, int g, int b)
     {
         m_lineColor.set(r, g, b);
-        if (m_autoFillColor) {
-            m_fillColor = m_lineColor;
-            m_fillColor.a /= 3;
-        }
     }
 
     //! 设置线条颜色
     void setLineColor(int r, int g, int b, int a)
     {
         m_lineColor.set(r, g, b, a);
-        if (m_autoFillColor) {
-            m_fillColor = m_lineColor;
-            m_fillColor.a /= 3;
-        }
     }
 
     //! 返回线条ARGB颜色
@@ -255,9 +231,6 @@ public:
     void setLineAlpha(int alpha)
     {
         m_lineColor.a = (unsigned char)alpha;
-        if (m_autoFillColor) {
-            m_fillColor.a = (unsigned char)(m_lineColor.a / 3);
-        }
     }
     
     //! 返回是否填充
@@ -270,7 +243,6 @@ public:
     void setNoFillColor()
     {
         m_fillColor = GiColor::Invalid();
-        m_autoFillColor = false;
     }
     
     //! 返回填充颜色
@@ -283,7 +255,6 @@ public:
     void setFillColor(const GiColor& color)
     {
         m_fillColor = color;
-        m_autoFillColor = false;
     }
     
     //! 设置填充颜色
@@ -292,7 +263,6 @@ public:
         if (m_fillColor.a < 1)
             m_fillColor.a = m_lineColor.a;
         m_fillColor.set(r, g, b);
-        m_autoFillColor = false;
     }
 
     //! 设置填充颜色
@@ -301,7 +271,6 @@ public:
         if (m_fillColor.a < 1)
             m_fillColor.a = m_lineColor.a;
         m_fillColor.set(r, g, b, a);
-        m_autoFillColor = false;
     }
 
     //! 返回线条ARGB颜色
@@ -314,7 +283,6 @@ public:
     void setFillARGB(int argb)
     {
         m_fillColor.setARGB(argb);
-        m_autoFillColor = false;
     }
     
     //! 返回填充透明度
@@ -329,41 +297,13 @@ public:
         if (m_fillColor.a == 0 && alpha > 0)
             m_fillColor = m_lineColor;
         m_fillColor.a = (unsigned char)alpha;
-        m_autoFillColor = false;
     }
     
-    //! 返回填充颜色是否随线条颜色自动变化
-    bool isAutoFillColor() const
-    {
-        return m_autoFillColor;
-    }
-    
-    //! 设置填充颜色是否随线条颜色自动变化
-    void setAutoFillColor(bool value)
-    {
-        m_autoFillColor = value;
-        if (m_autoFillColor) {
-            m_fillColor = m_lineColor;
-            m_fillColor.a /= 3;
-        }
-    }
-    
-    //! 返回绘图环境类型，供派生类用
-    /*! 本类始终返回1，派生类可设置 m_type 为其他值
-    */
-    int getType() const
-    {
-        return m_type;
-    }
-    
-protected:
-    int         m_type;             //!< 派生类可指定其他值来表示不同类型
 private:
     int         m_lineStyle;        //!< 线型, GiLineStyle
     float       m_lineWidth;        //!< 线宽, >0: 0.01mm, =0: 1px, <0:px
     GiColor     m_lineColor;        //!< 线条颜色
     GiColor     m_fillColor;        //!< 填充颜色
-    bool        m_autoFillColor;    //!< 填充颜色随线条颜色自动变化
     bool        m_autoScale;        //!< 像素单位线宽是否自动缩放
 };
 

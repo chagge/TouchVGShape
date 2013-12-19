@@ -23,7 +23,6 @@ public:
     float       minPenWidth;        //!< 最小像素线宽
 
     long        lastZoomTimes;      //!< 记下的放缩结果改变次数
-    volatile long   drawRefcnt;     //!< 绘图锁定计数
     volatile long   stopping;       //!< 是否需要停止绘图
     bool        isPrint;            //!< 是否打印或打印预览
     int         drawColors;         //!< 绘图DC颜色数
@@ -38,7 +37,6 @@ public:
 
     GiGraphicsImpl(GiTransform* x) : xform(x), canvas(NULL)
     {
-        drawRefcnt = 0;
         drawColors = 0;
         stopping = 0;
         isPrint = false;
@@ -67,19 +65,4 @@ public:
 private:
     GiGraphicsImpl();
     void operator=(const GiGraphicsImpl&);
-};
-
-//! 图形系统的绘图引用锁定辅助类
-class GiLock
-{
-    volatile long*  m_refcount;
-public:
-    GiLock(volatile long* refcount) : m_refcount(refcount)
-    {
-        giInterlockedIncrement(m_refcount);
-    }
-    ~GiLock()
-    {
-        giInterlockedDecrement(m_refcount);
-    }
 };

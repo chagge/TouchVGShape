@@ -279,7 +279,6 @@ bool MgShape::save(MgStorage* s) const
     s->writeUInt("lineColor", c.b | (c.g << 8) | (c.r << 16) | (c.a << 24));
     c = contextc()->getFillColor();
     s->writeUInt("fillColor", c.b | (c.g << 8) | (c.r << 16) | (c.a << 24));
-    s->writeBool("autoFillColor", contextc()->isAutoFillColor());
 
     return shapec()->save(s);
 }
@@ -293,7 +292,6 @@ bool MgShape::load(MgShapeFactory* factory, MgStorage* s)
 
     context()->setLineColor(GiColor(s->readInt("lineColor", 0xFF000000), true));
     context()->setFillColor(GiColor(s->readInt("fillColor", 0), true));
-    context()->setAutoFillColor(s->readBool("autoFillColor", context()->isAutoFillColor()));
 
     bool ret = shape()->load(factory, s);
     if (ret) {
