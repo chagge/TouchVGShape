@@ -79,7 +79,7 @@ void MgShapes::copyShapes(const MgShapes* src, bool deeply)
     clear();
     
     MgShapeIterator it(src);
-    while (MgShape* sp = it.getNext()) {
+    while (MgShape* sp = const_cast<MgShape*>(it.getNext())) {
         if (deeply) {
             addShape(*sp);
         } else {
@@ -126,6 +126,21 @@ MgObject* MgShapes::getOwner() const
 int MgShapes::getIndex() const
 {
     return im->index;
+}
+
+bool MgShapes::updateShape(MgShape* shape)
+{
+    if (shape && (!shape->getParent() || shape->getParent() == this)) {
+        I::iterator it = im->findPosition(shape->getID());
+        if (it != im->shapes.end()) {
+            shape->shape()->resetChangeCount((*it)->shapec()->getChangeCount() + 1);
+            (*it)->release();
+            *it = shape;
+            im->id2shape[shape->getID()] = shape;
+            return true;
+        }
+    }
+    return false;
 }
 
 MgShape* MgShapes::addShape(const MgShape& src)
@@ -219,7 +234,7 @@ void MgShapes::freeIterator(void*& it) const
     }
 }
 
-MgShape* MgShapes::getFirstShape(void*& it) const
+const MgShape* MgShapes::getFirstShape(void*& it) const
 {
     if (!this || im->shapes.empty()) {
         it = NULL;
@@ -229,7 +244,7 @@ MgShape* MgShapes::getFirstShape(void*& it) const
     return im->shapes.empty() ? NULL : im->shapes.front();
 }
 
-MgShape* MgShapes::getNextShape(void*& it) const
+const MgShape* MgShapes::getNextShape(void*& it) const
 {
     I::citerator* pit = (I::citerator*)it;
     if (pit && *pit != im->shapes.end()) {
@@ -240,22 +255,22 @@ MgShape* MgShapes::getNextShape(void*& it) const
     return NULL;
 }
 
-MgShape* MgShapes::getHeadShape() const
+const MgShape* MgShapes::getHeadShape() const
 {
     return (!this || im->shapes.empty()) ? NULL : im->shapes.front();
 }
 
-MgShape* MgShapes::getLastShape() const
+const MgShape* MgShapes::getLastShape() const
 {
     return (!this || im->shapes.empty()) ? NULL : im->shapes.back();
 }
 
-MgShape* MgShapes::findShape(int sid) const
+const MgShape* MgShapes::findShape(int sid) const
 {
     return im->findShape(sid);
 }
 
-MgShape* MgShapes::findShapeByTag(int tag) const
+const MgShape* MgShapes::findShapeByTag(int tag) const
 {
     if (!this || 0 == tag)
         return NULL;
@@ -266,7 +281,7 @@ MgShape* MgShapes::findShapeByTag(int tag) const
     return NULL;
 }
 
-MgShape* MgShapes::findShapeByType(int type) const
+const MgShape* MgShapes::findShapeByType(int type) const
 {
     if (!this || 0 == type)
         return NULL;
@@ -287,9 +302,9 @@ Box2d MgShapes::getExtent() const
     return extent;
 }
 
-MgShape* MgShapes::hitTest(const Box2d& limits, MgHitResult& res, Filter filter) const
+const MgShape* MgShapes::hitTest(const Box2d& limits, MgHitResult& res, Filter filter) const
 {
-    MgShape* retshape = NULL;
+    const MgShape* retshape = NULL;
     
     res.dist = _FLT_MAX;
     for (I::citerator it = im->shapes.begin(); it != im->shapes.end(); ++it) {
@@ -398,10 +413,10 @@ bool MgShapes::load(MgShapeFactory* factory, MgStorage* s, bool addOnly)
             const int sid = s->readInt("id", 0);
             s->readFloatArray("extent", &rect.xmin, 4);
             
-            MgShape* oldsp = addOnly && sid ? findShape(sid) : NULL;
+            const MgShape* oldsp = addOnly && sid ? findShape(sid) : NULL;
             MgShape* newsp = factory->createShape(type);
             
-            if (oldsp && oldsp->shape()->getType() != type) {
+            if (oldsp && oldsp->shapec()->getType() != type) {
                 oldsp = NULL;
             }
             if (newsp) {
@@ -410,10 +425,8 @@ bool MgShapes::load(MgShapeFactory* factory, MgStorage* s, bool addOnly)
                 if (ret) {
                     newsp->shape()->setFlag(kMgClosed, newsp->shape()->isClosed());
                     im->id2shape[newsp->getID()] = newsp;
-                    if (oldsp) {    // replace the shape object
-                        *(im->findPosition(sid)) = newsp;
-                        newsp->shape()->resetChangeCount(oldsp->shape()->getChangeCount() + 1);
-                        oldsp->release();
+                    if (oldsp) {
+                        updateShape(newsp);
                     }
                     else {
                         im->shapes.push_back(newsp);

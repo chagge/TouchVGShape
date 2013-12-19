@@ -347,14 +347,14 @@ bool MgImageShape::_load(MgShapeFactory* factory, MgStorage* s)
     return __super::_load(factory, s);
 }
 
-MgShape* MgImageShape::findShapeByImageID(MgShapes* shapes, const char* name)
+const MgShape* MgImageShape::findShapeByImageID(const MgShapes* shapes, const char* name)
 {
     MgShapeIterator it(shapes);
-    MgShape* ret = NULL;
+    const MgShape* ret = NULL;
     
-    while (MgShape* sp = it.getNext()) {
-        if (sp->shape()->isKindOf(MgImageShape::Type())) {
-            MgImageShape *image = (MgImageShape*)sp->shape();
+    while (const MgShape* sp = it.getNext()) {
+        if (sp->shapec()->isKindOf(MgImageShape::Type())) {
+            const MgImageShape *image = (const MgImageShape*)sp->shapec();
             if (strcmp(name, image->getName()) == 0) {
                 ret = sp;
                 break;

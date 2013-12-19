@@ -21,13 +21,13 @@ bool MgComposite::_isKindOf(int type) const
 
 int MgComposite::_getPointCount() const
 {
-    MgShape* sp = _shapes->getHeadShape();
+    const MgShape* sp = _shapes->getHeadShape();
     return sp ? sp->shapec()->getPointCount() : 0;
 }
 
 Point2d MgComposite::_getPoint(int index) const
 {
-    MgShape* sp = _shapes->getHeadShape();
+    const MgShape* sp = _shapes->getHeadShape();
     return sp ? sp->shapec()->getPoint(index) : Point2d();
 }
 
@@ -40,7 +40,7 @@ int MgComposite::_getHandleCount() const
     int n = 0;
     MgShapeIterator it(_shapes);
     
-    while (MgShape* sp = it.getNext()) {
+    while (const MgShape* sp = it.getNext()) {
         n += sp->shapec()->getHandleCount();
     }
     
@@ -52,7 +52,7 @@ Point2d MgComposite::_getHandlePoint(int index) const
     int n = 0;
     MgShapeIterator it(_shapes);
     
-    while (MgShape* sp = it.getNext()) {
+    while (const MgShape* sp = it.getNext()) {
         int c = sp->shapec()->getHandleCount();
         if (index < n + c) {
             return sp->shapec()->getHandlePoint(index - n);
@@ -73,7 +73,7 @@ int MgComposite::_getHandleType(int index) const
     int n = 0;
     MgShapeIterator it(_shapes);
     
-    while (MgShape* sp = it.getNext()) {
+    while (const MgShape* sp = it.getNext()) {
         int c = sp->shapec()->getHandleCount();
         if (index < n + c) {
             return sp->shapec()->getHandleType(index - n);
@@ -89,7 +89,7 @@ bool MgComposite::_isHandleFixed(int index) const
     int n = 0;
     MgShapeIterator it(_shapes);
     
-    while (MgShape* sp = it.getNext()) {
+    while (const MgShape* sp = it.getNext()) {
         int c = sp->shapec()->getHandleCount();
         if (index < n + c) {
             return sp->shapec()->isHandleFixed(index - n);
@@ -116,8 +116,7 @@ void MgComposite::_update()
     MgShapeIterator it(_shapes);
     _extent.empty();
 
-    while (MgShape* sp = it.getNext()) {
-        sp->shape()->update();
+    while (const MgShape* sp = it.getNext()) {
         _extent.unionWith(sp->shapec()->getExtent());
     }
     __super::_update();
@@ -126,7 +125,7 @@ void MgComposite::_update()
 void MgComposite::_transform(const Matrix2d& mat)
 {
     MgShapeIterator it(_shapes);
-    while (MgShape* sp = it.getNext()) {
+    while (MgShape* sp = const_cast<MgShape*>(it.getNext())) {
         sp->shape()->transform(mat);
     }
 }
@@ -157,7 +156,7 @@ float MgComposite::_hitTest(const Point2d& pt, float tol, MgHitResult& res) cons
     res.segment = 0;
     res.dist = _FLT_MAX;
 
-    while (MgShape* sp = it.getNext()) {
+    while (const MgShape* sp = it.getNext()) {
         if (limits.isIntersect(sp->shapec()->getExtent())) {
             float d = sp->shapec()->hitTest(pt, tol, tmpRes);
             if (res.dist > d - _MGZERO)
@@ -177,7 +176,7 @@ bool MgComposite::_offset(const Vector2d& vec, int)
     MgShapeIterator it(_shapes);
     int n = 0;
 
-    while (MgShape* sp = it.getNext()) {
+    while (MgShape* sp = const_cast<MgShape*>(it.getNext())) {
         n += sp->shape()->offset(vec, -1) ? 1 : 0;
     }
 
@@ -189,7 +188,7 @@ bool MgComposite::_draw(int mode, GiGraphics& gs, const GiContext& ctx, int) con
     MgShapeIterator it(_shapes);
     int n = 0;
 
-    while (MgShape* sp = it.getNext()) {
+    while (const MgShape* sp = it.getNext()) {
         n += sp->draw(mode, gs, ctx.isNullLine() ? NULL : &ctx, -1) ? 1 : 0;
     }
 
@@ -210,7 +209,7 @@ MgGroup::~MgGroup()
 
 bool MgGroup::_offset(const Vector2d& vec, int segment)
 {
-    MgShape* sp = _shapes->findShape(segment);
+    MgShape* sp = const_cast<MgShape*>(_shapes->findShape(segment));
 
     if (sp && canOffsetShapeAlone(sp)) {
         return sp->shape()->offset(vec, -1);
@@ -221,7 +220,7 @@ bool MgGroup::_offset(const Vector2d& vec, int segment)
 
 bool MgGroup::_draw(int mode, GiGraphics& gs, const GiContext& ctx, int segment) const
 {
-    MgShape* sp = _shapes->findShape(segment);
+    const MgShape* sp = _shapes->findShape(segment);
     if (sp) {
         return sp->draw(mode, gs, ctx.isNullLine() ? NULL : &ctx, -1);
     }

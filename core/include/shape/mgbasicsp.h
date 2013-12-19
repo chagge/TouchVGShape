@@ -366,7 +366,7 @@ public:
     const char* getName() const { return _name; }
     void setName(const char* name);
     
-    static MgShape* findShapeByImageID(MgShapes* shapes, const char* name);
+    static const MgShape* findShapeByImageID(const MgShapes* shapes, const char* name);
     
 protected:
     void _copy(const MgImageShape& src);

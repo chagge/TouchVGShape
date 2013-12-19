@@ -28,21 +28,21 @@ public:
     MgShape* addShapeByType(MgShapeFactory* factory, int type);
 
 #ifndef SWIG
-    MgShape* getFirstShape(void*& it) const;
-    MgShape* getNextShape(void*& it) const;
+    const MgShape* getFirstShape(void*& it) const;
+    const MgShape* getNextShape(void*& it) const;
     void freeIterator(void*& it) const;
     typedef bool (*Filter)(const MgShape*);
 #endif
 
     int getShapeCount() const;
-    MgShape* getHeadShape() const;
-    MgShape* getLastShape() const;
-    MgShape* findShape(int sid) const;
-    MgShape* findShapeByTag(int tag) const;
-    MgShape* findShapeByType(int type) const;
+    const MgShape* getHeadShape() const;
+    const MgShape* getLastShape() const;
+    const MgShape* findShape(int sid) const;
+    const MgShape* findShapeByTag(int tag) const;
+    const MgShape* findShapeByType(int type) const;
     Box2d getExtent() const;
     
-    MgShape* hitTest(const Box2d& limits, MgHitResult& res
+    const MgShape* hitTest(const Box2d& limits, MgHitResult& res
 #ifndef SWIG
         , Filter filter = NULL) const;
 #else
@@ -68,6 +68,9 @@ public:
     
     //! 复制出新图形并添加到图形列表中
     MgShape* addShape(const MgShape& src);
+    
+    //! 更新为新的图形，该图形从原来图形克隆得到
+    bool updateShape(MgShape* shape);
     
     //! 移除一个图形，由调用者删除图形对象
     MgShape* removeShape(int sid, bool skipLockedShape = true);
@@ -130,13 +133,13 @@ public:
     }
     
     //! 得到当前遍历位置的图形
-    /*! 可使用 while (MgShape* sp = it.getNext()) {...} 遍历。
+    /*! 可使用 while (const MgShape* sp = it.getNext()) {...} 遍历。
      */
-    MgShape* getNext() {
+    const MgShape* getNext() {
         if (!_it && _s) {
             _sp = _s->getFirstShape(_it);
         }
-        MgShape* sp = _sp;
+        const MgShape* sp = _sp;
         if (_sp && _s) {
             _sp = _s->getNextShape(_it);
         }
@@ -147,7 +150,7 @@ private:
     MgShapeIterator();
     const MgShapes* _s;
     void* _it;
-    MgShape* _sp;
+    const MgShape* _sp;
 };
 
 #endif // TOUCHVG_MGSHAPES_H_
