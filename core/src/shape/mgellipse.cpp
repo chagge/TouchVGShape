@@ -188,8 +188,8 @@ float MgArc::getSweepAngle() const
     }
     
     Tol tol(getRadius() * 1e-3f, 1e-4f);
-    if (getStartPoint().isEqualTo(getEndPoint(), tol)
-        && (getMidPoint() + (getStartPoint() + getEndPoint()) / 2).isEqualTo(2 * getCenter(), tol)) {
+    if (getStartPoint().equals(getEndPoint(), tol)
+        && (getMidPoint() + (getStartPoint() + getEndPoint()) / 2).equals(2 * getCenter(), tol)) {
         return _M_2PI;
     }
 

@@ -3,7 +3,6 @@
 // License: LGPL, https://github.com/rhcad/touchvg
 
 #include "mgbox.h"
-#include "mgmat.h"
 
 Box2d::Box2d(const Box2d& src, bool bNormalize)
 {
@@ -121,16 +120,12 @@ Box2d& Box2d::unionWith(const Box2d& r1, const Box2d& r2)
 
 Box2d Box2d::operator*(const Matrix2d& m) const
 {
-    if (m.isOrtho())
-        return Box2d(leftBottom() * m, rightTop() * m);
     return Box2d(leftBottom() * m, rightTop() * m,
         leftTop() * m, rightBottom() * m);
 }
 
 Box2d& Box2d::operator*=(const Matrix2d& m)
 {
-    if (m.isOrtho())
-        return set(leftBottom() * m, rightTop() * m);
     return set(leftBottom() * m, rightTop() * m,
         leftTop() * m, rightBottom() * m);
 }

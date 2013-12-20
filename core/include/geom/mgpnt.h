@@ -226,13 +226,13 @@ public:
     //! 判断两个点是否相等
     bool operator==(const Point2d& pnt) const
     {
-        return isEqualTo(pnt);
+        return equals(pnt);
     }
     
     //! 判断两个点是否不相等
     bool operator!=(const Point2d& pnt) const
     {
-        return !isEqualTo(pnt);
+        return !equals(pnt);
     }
 #endif
     
@@ -242,7 +242,7 @@ public:
         \param tol 判断的容差，用到其长度容差
         \return 如果相等，则返回true，否则返回false
     */
-    bool isEqualTo(const Point2d& pnt, const Tol& tol = Tol::gTol()) const
+    bool equals(const Point2d& pnt, const Tol& tol = Tol::gTol()) const
     {
         return mgHypot(x - pnt.x, y - pnt.y) <= tol.equalPoint();
     }

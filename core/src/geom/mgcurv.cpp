@@ -396,9 +396,9 @@ bool mgcurv::arcBulge(
     return mgcurv::arc3P(start, point, end, center, radius, startAngle, sweepAngle);
 }
 
-static int _InsectTwoCircles(point_t& pt1, point_t& pt2,
-                             const point_t& c1, double r1,
-                             const point_t& c2, double r2)
+static int _InsectTwoCircles(pointd& pt1, pointd& pt2,
+                             const pointd& c1, double r1,
+                             const pointd& c2, double r2)
 {
     double d, a, b, c, p, q, r;
     double cos_value[2], sin_value[2];
@@ -461,9 +461,9 @@ static int _InsectTwoCircles(point_t& pt1, point_t& pt2,
 int mgcurv::insectTwoCircles(Point2d& pt1, Point2d& pt2,
                                const Point2d& c1, float r1, const Point2d& c2, float r2)
 {
-    point_t p1 = { 0, 0 }, p2 = { 0, 0 };
-    point_t ca = { c1.x, c1.y };
-    point_t cb = { c2.x, c2.y };
+    pointd p1 = { 0, 0 }, p2 = { 0, 0 };
+    pointd ca = { c1.x, c1.y };
+    pointd cb = { c2.x, c2.y };
     
     int n = _InsectTwoCircles(p1, p2, ca, r1, cb, r2);
     

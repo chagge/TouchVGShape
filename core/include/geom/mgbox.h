@@ -717,7 +717,7 @@ public:
         \param tol 判断的容差，用到其长度容差
         \return 如果相等，则返回true，否则返回false
     */
-    bool isEqualTo(const Box2d& box, const Tol& tol = Tol::gTol()) const
+    bool equals(const Box2d& box, const Tol& tol = Tol::gTol()) const
     {
         return mgHypot(xmin - box.xmin, ymin - box.ymin) <= tol.equalPoint()
             && mgHypot(xmax - box.xmax, ymax - box.ymax) <= tol.equalPoint();

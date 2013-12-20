@@ -130,7 +130,7 @@ public:
 #endif
     
     //! 用欧拉规则判断两个矩阵是否相等，即判断矩阵的行矢量是否相等
-    bool isEqualTo(const Matrix2d& mat, const Tol& tol = Tol::gTol()) const;
+    bool equals(const Matrix2d& mat, const Tol& tol = Tol::gTol()) const;
 
     //! 判断是否为单位矩阵
     bool isIdentity() const;

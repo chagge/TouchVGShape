@@ -16,14 +16,14 @@ c_includes := $(core_inc) \
 core_src   := ../../../core/src
 
 geom_files := $(core_src)/geom/mgbase.cpp \
-              $(core_src)/geom/mgbnd.cpp \
               $(core_src)/geom/mgbox.cpp \
               $(core_src)/geom/mgcurv.cpp \
               $(core_src)/geom/mglnrel.cpp \
               $(core_src)/geom/mgmat.cpp \
               $(core_src)/geom/mgnear.cpp \
               $(core_src)/geom/mgnearbz.cpp \
-              $(core_src)/geom/mgvec.cpp
+              $(core_src)/geom/mgvec.cpp \
+              $(core_src)/geom/mgpnt.cpp
 
 graph_files := $(core_src)/graph/gigraph.cpp \
               $(core_src)/graph/gipath.cpp \

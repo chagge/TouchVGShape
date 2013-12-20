@@ -7,7 +7,7 @@
 
 #include <math.h>
 
-struct point_t {
+struct pointd {
     double x, y;
 
     double length() const {
@@ -16,37 +16,37 @@ struct point_t {
     double lengthSquare() const {
         return x*x + y*y;
     }
-    double distanceSquare(const point_t& v) const {
+    double distanceSquare(const pointd& v) const {
         return (x - v.x) * (x - v.x) + (y - v.y) * (y - v.y);
     }
-    double distance(const point_t& v) const {
+    double distance(const pointd& v) const {
         return sqrt(distanceSquare(v));
     }
-    double dotProduct(const point_t& v) const {
+    double dotProduct(const pointd& v) const {
         return (x * v.x + y * v.y);
     }
-    double crossProduct(const point_t& v) const {
+    double crossProduct(const pointd& v) const {
         return (x * v.y - y * v.x);
     }
 
-    point_t operator-(const point_t& v) const
+    pointd operator-(const pointd& v) const
     {
-        point_t ret = { x - v.x, y - v.y };
+        pointd ret = { x - v.x, y - v.y };
         return ret;
     }
-    point_t operator+(const point_t& v) const
+    pointd operator+(const pointd& v) const
     {
-        point_t ret = { x + v.x, y + v.y };
+        pointd ret = { x + v.x, y + v.y };
         return ret;
     }
-    point_t operator*(double d) const
+    pointd operator*(double d) const
     {
-        point_t ret = { x * d, y * d };
+        pointd ret = { x * d, y * d };
         return ret;
     }
-    friend point_t operator*(double d, const point_t& v)
+    friend pointd operator*(double d, const pointd& v)
     {
-        point_t ret = { v.x * d, v.y * d };
+        pointd ret = { v.x * d, v.y * d };
         return ret;
     }
 };

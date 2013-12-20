@@ -289,13 +289,13 @@ public:
     //! 判断两个矢量是否相等
     bool operator==(const Vector2d& v) const
     {
-        return isEqualTo(v);
+        return equals(v);
     }
     
     //! 判断两个矢量是否不相等
     bool operator!=(const Vector2d& v) const
     {
-        return !isEqualTo(v);
+        return !equals(v);
     }
 #endif // SWIG
     
@@ -305,7 +305,7 @@ public:
         \param tol 判断的容差，用到其矢量容差
         \return 如果相等，则返回true，否则返回false
     */
-    bool isEqualTo(const Vector2d& v, const Tol& tol = Tol::gTol()) const
+    bool equals(const Vector2d& v, const Tol& tol = Tol::gTol()) const
     {
         return mgHypot(x - v.x, y - v.y) <= tol.equalVector();
     }

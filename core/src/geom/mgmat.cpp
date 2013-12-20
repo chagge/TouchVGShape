@@ -188,17 +188,17 @@ float Matrix2d::angle() const
 // 判断两个矩阵是否相等
 bool Matrix2d::operator==(const Matrix2d& mat) const
 {
-    return isEqualTo(mat);
+    return equals(mat);
 }
 
 // 判断两个矩阵是否不相等
 bool Matrix2d::operator!=(const Matrix2d& mat) const
 {
-    return !isEqualTo(mat);
+    return !equals(mat);
 }
 
 // 用欧拉规则判断两个矩阵是否相等，即判断矩阵的行矢量是否相等
-bool Matrix2d::isEqualTo(const Matrix2d& mat, const Tol& tol) const
+bool Matrix2d::equals(const Matrix2d& mat, const Tol& tol) const
 {
     return mgHypot(m11 - mat.m11, m12 - mat.m12) <= tol.equalVector()
         && mgHypot(m21 - mat.m21, m22 - mat.m22) <= tol.equalVector()

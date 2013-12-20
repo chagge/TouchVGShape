@@ -21,12 +21,12 @@ static inline int SGN(double a) { return a<0 ? -1 : 1; }
 //      pts: The control points
 //      w: Ctl pts of 5th-degree curve, [W_DEGREE+1]
 //
-static void ConvertToBezierForm(const point_t& pt, const point_t* pts, point_t* w)
+static void ConvertToBezierForm(const pointd& pt, const pointd* pts, pointd* w)
 {
     int     i, j, k, m, n, ub, lb;
     int     row, column;            // Table indices
-    point_t c[DEGREE+1];            // pts(i)'s - pt
-    point_t d[DEGREE];              // pts(i+1) - pts(i)
+    pointd c[DEGREE+1];            // pts(i)'s - pt
+    pointd d[DEGREE];              // pts(i+1) - pts(i)
     double  cdTable[3][4];          // Dot product of c, d
     const double z[3][4] = {        // Precomputed "z" for cubics
         {1.0, 0.6, 0.3, 0.1},
@@ -80,7 +80,7 @@ static void ConvertToBezierForm(const point_t& pt, const point_t* pts, point_t* 
 //      pts: Control pts
 //      degree: Degree of bezier curve
 //
-static int CrossingCount(const point_t* pts, int degree)
+static int CrossingCount(const pointd* pts, int degree)
 {
     int     i;
     int     n_crossings = 0;    // Number of zero-crossings
@@ -102,7 +102,7 @@ static int CrossingCount(const point_t* pts, int degree)
 //      pts: Control pts
 //      degree: Degree of bezier curve
 //
-static int ControlPolygonFlatEnough(const point_t* pts, int degree)
+static int ControlPolygonFlatEnough(const pointd* pts, int degree)
 {
     int     i;                      // Index variable
     double  distance[W_DEGREE+1];   // Distances from pts to line
@@ -208,7 +208,7 @@ static int ControlPolygonFlatEnough(const point_t* pts, int degree)
 //      pts: Control points
 //      degree: Degree of curve
 //
-static double ComputeXIntercept(const point_t* pts, int degree)
+static double ComputeXIntercept(const pointd* pts, int degree)
 {
     double  XLK, YLK, XNM, YNM, XMK, YMK;
     double  det, detInv;
@@ -245,11 +245,11 @@ static double ComputeXIntercept(const point_t* pts, int degree)
 //      Left: output left half ctl pts
 //      Right: output right half ctl pts
 //
-static point_t BezierPoint(const point_t* pts, int degree, double t, 
-                           point_t* Left, point_t* Right)
+static pointd BezierPoint(const pointd* pts, int degree, double t, 
+                           pointd* Left, pointd* Right)
 {
     int     i, j;       // Index variables
-    point_t Vtemp[W_DEGREE+1][W_DEGREE+1];
+    pointd Vtemp[W_DEGREE+1][W_DEGREE+1];
 
     // Copy control points
     for (j =0; j <= degree; j++) {
@@ -290,11 +290,11 @@ static point_t BezierPoint(const point_t* pts, int degree, double t,
 //      t: output candidate t-values
 //      depth: The depth of the recursion
 //
-static int FindRoots(const point_t* w, int degree, double* t, int depth)
+static int FindRoots(const pointd* w, int degree, double* t, int depth)
 {
     int i;
-    point_t Left[W_DEGREE+1];   // New left and right
-    point_t Right[W_DEGREE+1];  // control polygons
+    pointd Left[W_DEGREE+1];   // New left and right
+    pointd Right[W_DEGREE+1];  // control polygons
     int     left_count;         // Solution count from children
     int     right_count;
     double  left_t[W_DEGREE+1]; // Solutions from kids
@@ -348,9 +348,9 @@ static int FindRoots(const point_t* w, int degree, double* t, int depth)
 //      pts: Control points of cubic Bezier
 //      nearpt: output the point on the curve at that parameter value
 //
-static void NearestOnBezier(const point_t& pt, const point_t* pts, point_t& nearpt)
+static void NearestOnBezier(const pointd& pt, const pointd* pts, pointd& nearpt)
 {
-    point_t w[W_DEGREE+1];          // Ctl pts for 5th-degree eqn
+    pointd w[W_DEGREE+1];          // Ctl pts for 5th-degree eqn
     double  t_candidate[W_DEGREE];  // Possible roots
     int     n_solutions;            // Number of roots found
     double  t;                      // Parameter value of closest pt
@@ -364,7 +364,7 @@ static void NearestOnBezier(const point_t& pt, const point_t* pts, point_t& near
     // Compare distances of pt to all candidates, and to t=0, and t=1
     {
         double  dist, new_dist;
-        point_t p;
+        pointd p;
         int     i;
 
 
@@ -375,7 +375,7 @@ static void NearestOnBezier(const point_t& pt, const point_t* pts, point_t& near
         // Find distances for candidate points
         for (i = 0; i < n_solutions; i++) {
             p = BezierPoint(pts, DEGREE, t_candidate[i],
-                (point_t*)0, (point_t*)0);
+                (pointd*)0, (pointd*)0);
             new_dist = (pt - p).lengthSquare();
             if (new_dist < dist) {
                 dist = new_dist;
@@ -393,13 +393,13 @@ static void NearestOnBezier(const point_t& pt, const point_t* pts, point_t& near
 
     // Return the point on the curve at parameter value t
     // printf("t : %4.12f\n", t);
-    nearpt = (BezierPoint(pts, DEGREE, t, (point_t*)0, (point_t*)0));
+    nearpt = (BezierPoint(pts, DEGREE, t, (pointd*)0, (pointd*)0));
 }
 
 float mgnear::nearestOnBezier(
     const Point2d& pt, const Point2d* pts, Point2d& nearpt)
 {
-    point_t nearpt2, pts2[4], pt2 = { pt.x, pt.y };
+    pointd nearpt2, pts2[4], pt2 = { pt.x, pt.y };
     for (int i = 0; i < 4; i++) {
         pts2[i].x = pts[i].x;
         pts2[i].y = pts[i].y;
